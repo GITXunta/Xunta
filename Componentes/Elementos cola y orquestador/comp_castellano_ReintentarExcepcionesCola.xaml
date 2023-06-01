@@ -1,0 +1,306 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Comp_ReintentarExcepcionesCola" this:Comp_ReintentarExcepcionesCola.in_TransactionStatus="Failed" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_OrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_OrchestratorQueueName" Type="InArgument(x:String)" />
+    <x:Property Name="in_TransactionStatus" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>889.1076923076922,2580.9230769230767</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Comp_ReintentarExcepcionesCola_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="29">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="82">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="comp_castellano_ReintentarExcepcionesCola" sap:VirtualizedContainerService.HintSize="686.7692307692307,2515.9384615384615" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="vTransactionItems" />
+      <Variable x:TypeArguments="sd:DataTable" Name="vDtData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Inicio" sap:VirtualizedContainerService.HintSize="624.7384615384615,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;START - Comp_ReintentarExcepcionesCola&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="624.7384615384615,2146.707692307692" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionStatus.ToLower]" sap:VirtualizedContainerService.HintSize="587.0769230769231,1929.6" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence x:Key="failed" sap:VirtualizedContainerService.HintSize="547.1999999999999,1690.3384615384614" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage sap:VirtualizedContainerService.HintSize="485.16923076923075,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Reseteando transacciones fallidas...&quot;]" />
+            <ui:GetQueueItems Priority="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="485.16923076923075,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_2" QueueItemStates="Failed" QueueName="[in_OrchestratorQueueName]" Result="[vTransactionItems]">
+              <ui:GetQueueItems.Duration>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)" />
+              </ui:GetQueueItems.Duration>
+              <ui:GetQueueItems.From>
+                <InArgument x:TypeArguments="s:Nullable(s:DateTime)" />
+              </ui:GetQueueItems.From>
+              <ui:GetQueueItems.Reference>
+                <InArgument x:TypeArguments="x:String" />
+              </ui:GetQueueItems.Reference>
+              <ui:GetQueueItems.Skip>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:GetQueueItems.Skip>
+              <ui:GetQueueItems.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:GetQueueItems.TimeoutMS>
+              <ui:GetQueueItems.To>
+                <InArgument x:TypeArguments="s:Nullable(s:DateTime)" />
+              </ui:GetQueueItems.To>
+              <ui:GetQueueItems.Top>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:GetQueueItems.Top>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetQueueItems>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="485.16923076923075,329.3538461538461" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.7230769230769,251.07692307692307" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:DeleteQueueItems DisplayName="Delete Queue Items" FolderPath="[in_OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="387.6923076923077,140.3076923076923" sap2010:WorkflowViewState.IdRef="DeleteQueueItems_1" QueueItems="[vTransactionItems]">
+                    <ui:DeleteQueueItems.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:DeleteQueueItems.TimeoutMS>
+                  </ui:DeleteQueueItems>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="485.16923076923075,900.9230769230769" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[vTransactionItems]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="ui:QueueItem">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="transactionItem" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.24615384615385,718.5230769230769" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="358.15384615384613,629.1692307692307" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" ItemInformationCollection="[transactionItem.SpecificContent]" Priority="Normal" QueueType="[in_OrchestratorQueueName]">
+                      <ui:AddQueueItem.ItemInformation>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                      </ui:AddQueueItem.ItemInformation>
+                      <ui:AddQueueItem.Reference>
+                        <InArgument x:TypeArguments="x:String" />
+                      </ui:AddQueueItem.Reference>
+                      <ui:AddQueueItem.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:AddQueueItem.TimeoutMS>
+                    </ui:AddQueueItem>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
+          <Sequence x:Key="abandoned" sap:VirtualizedContainerService.HintSize="498.4,1069.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Reseteando transacciones abandonadas...&quot;]" />
+            <ui:GetQueueItems Priority="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="436,143.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="Abandoned" QueueName="[in_OrchestratorQueueName]" Result="[vTransactionItems]">
+              <ui:GetQueueItems.Duration>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)" />
+              </ui:GetQueueItems.Duration>
+              <ui:GetQueueItems.From>
+                <InArgument x:TypeArguments="s:Nullable(s:DateTime)" />
+              </ui:GetQueueItems.From>
+              <ui:GetQueueItems.Reference>
+                <InArgument x:TypeArguments="x:String" />
+              </ui:GetQueueItems.Reference>
+              <ui:GetQueueItems.Skip>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:GetQueueItems.Skip>
+              <ui:GetQueueItems.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:GetQueueItems.TimeoutMS>
+              <ui:GetQueueItems.To>
+                <InArgument x:TypeArguments="s:Nullable(s:DateTime)" />
+              </ui:GetQueueItems.To>
+              <ui:GetQueueItems.Top>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:GetQueueItems.Top>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetQueueItems>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.6923076923077,394.3384615384615" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400.24615384615385,266.58461538461535" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:DeleteQueueItems DisplayName="Delete Queue Items" FolderPath="[in_OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="358.15384615384613,177.23076923076923" sap2010:WorkflowViewState.IdRef="DeleteQueueItems_2" QueueItems="[vTransactionItems]">
+                    <ui:DeleteQueueItems.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:DeleteQueueItems.TimeoutMS>
+                  </ui:DeleteQueueItems>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="435.6923076923077,279.87692307692305" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[vTransactionItems]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="ui:QueueItem">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="transactionItem" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.24615384615385,149.16923076923075" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="358.15384615384613,59.81538461538461" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" ItemInformationCollection="[transactionItem.SpecificContent]" Priority="Normal" QueueType="[in_OrchestratorQueueName]">
+                      <ui:AddQueueItem.ItemInformation>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                      </ui:AddQueueItem.ItemInformation>
+                      <ui:AddQueueItem.Reference>
+                        <InArgument x:TypeArguments="x:String" />
+                      </ui:AddQueueItem.Reference>
+                      <ui:AddQueueItem.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:AddQueueItem.TimeoutMS>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:AddQueueItem>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
+        </Switch>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="590.7692307692307,19.93846153846154" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="449.6,307.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[exception.Message]" />
+              <Throw Exception="[new BusinessRuleException(&quot;Error al reintentar transacciones excepcionadas&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="624.7384615384615,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;END - Comp_ReintentarExcepcionesCola&quot;]" />
+  </Sequence>
+</Activity>
