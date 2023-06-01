@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>943.0153846153846,1267.9384615384615</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>686.0307692307692,1992.3692307692306</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>comp_castellano_EnviarCorreo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,77 +116,162 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="comp_castellano_EnviarCorreo" sap:VirtualizedContainerService.HintSize="509.5384615384615,1202.9538461538461" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="comp_castellano_EnviarCorreo" sap:VirtualizedContainerService.HintSize="695.6307692307691,1927.3846153846152" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="vBoolCorreoEnviado" />
+      <Variable x:TypeArguments="x:Int32" Name="vIntContadorErrores" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="447.5076923076923,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_castellano_EnviarCorreo&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="447.5076923076923,833.7230769230769" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-      <TryCatch.Variables>
-        <Variable x:TypeArguments="x:String" Default="smtp.gmail.com" Name="vStrServidorCorreo" />
-        <Variable x:TypeArguments="x:Int32" Default="465" Name="vIntPuertoCorreo" />
-        <Variable x:TypeArguments="x:String" Default="antonfernan99@gmail.com" Name="vStrCorreoOrigenUser" />
-        <Variable x:TypeArguments="x:String" Default="sffkjfvkzepjevxz" Name="vStrCorreoOrigenPass" />
-      </TryCatch.Variables>
-      <TryCatch.Try>
-        <If Condition="[in_ArrArchivosAdjuntos is Nothing]" DisplayName="If 'Hay archivos adjuntos'" sap:VirtualizedContainerService.HintSize="409.8461538461538,616.6153846153845" sap2010:WorkflowViewState.IdRef="If_1">
-          <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,217.84615384615384" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[in_strCuerpoCorreo]" DisplayName="Send mail" Email="[vStrCorreoOrigenUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.7846153846154,129.96923076923076" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Password="[vStrCorreoOrigenPass]" Port="[vIntPuertoCorreo]" SecureConnection="Auto" Server="[vStrServidorCorreo]" Subject="[in_strAsuntoCorreo]" To="[in_strCorreoDestinatario]">
-                <ui:SendMail.Files>
-                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                </ui:SendMail.Files>
-              </ui:SendMail>
-            </Sequence>
-          </If.Then>
-          <If.Else>
-            <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,217.84615384615384" sap2010:WorkflowViewState.IdRef="Sequence_4">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[in_ArrArchivosAdjuntos]" Body="[in_strCuerpoCorreo]" DisplayName="Send mail" Email="[vStrCorreoOrigenUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.7846153846154,129.96923076923076" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="True" Password="[vStrCorreoOrigenPass]" Port="[vIntPuertoCorreo]" SecureConnection="Auto" Server="[vStrServidorCorreo]" Subject="[in_strAsuntoCorreo]" To="[in_strCorreoDestinatario]">
-                <ui:SendMail.Files>
-                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                </ui:SendMail.Files>
-              </ui:SendMail>
-            </Sequence>
-          </If.Else>
-        </If>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="413.5384615384615,19.93846153846154" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="633.5999999999999,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_castellano_EnviarCorreo&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="633.5999999999999,132.18461538461537" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">[vBoolCorreoEnviado]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[vIntContadorErrores]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="633.5999999999999,683.0769230769231" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="598.1538461538461,521.3538461538461" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="449.7230769230769,327.87692307692305" sap2010:WorkflowViewState.IdRef="Sequence_2">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.6923076923077,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[exception.Message]" />
-              <Throw Exception="[new SystemException(&quot;Error al enviar correo electrónico&quot;)]" sap:VirtualizedContainerService.HintSize="387.6923076923077,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_1" />
-            </Sequence>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="447.5076923076923,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - comp_castellano_EnviarCorreo&quot;]" />
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="536.1230769230768,410.58461538461535" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch.Variables>
+              <Variable x:TypeArguments="x:String" Default="smtp.gmail.com" Name="vStrServidorCorreo" />
+              <Variable x:TypeArguments="x:Int32" Default="465" Name="vIntPuertoCorreo" />
+              <Variable x:TypeArguments="x:String" Default="antonfernan99@gmail.com" Name="vStrCorreoOrigenUser" />
+              <Variable x:TypeArguments="x:String" Default="sffkjfvkzepjevxz" Name="vStrCorreoOrigenPass" />
+            </TryCatch.Variables>
+            <TryCatch.Try>
+              <If Condition="[in_ArrArchivosAdjuntos is Nothing]" DisplayName="If 'Hay archivos adjuntos'" sap:VirtualizedContainerService.HintSize="510.276923076923,855.876923076923" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="476.30769230769226,337.4769230769231" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[in_strCuerpoCorreo]" DisplayName="Send mail" Email="[vStrCorreoOrigenUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434.2153846153846,129.96923076923076" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Password="[vStrCorreoOrigenPass]" Port="[vIntPuertoCorreo]" SecureConnection="Auto" Server="[vStrServidorCorreo]" Subject="[in_strAsuntoCorreo]" To="[in_strCorreoDestinatario]">
+                      <ui:SendMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </ui:SendMail.Files>
+                    </ui:SendMail>
+                    <Assign sap:VirtualizedContainerService.HintSize="434.2153846153846,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[vBoolCorreoEnviado]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="476.30769230769226,337.4769230769231" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[in_ArrArchivosAdjuntos]" Body="[in_strCuerpoCorreo]" DisplayName="Send mail" Email="[vStrCorreoOrigenUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434.2153846153846,129.96923076923076" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="True" Password="[vStrCorreoOrigenPass]" Port="[vIntPuertoCorreo]" SecureConnection="Auto" Server="[vStrServidorCorreo]" Subject="[in_strAsuntoCorreo]" To="[in_strCorreoDestinatario]">
+                      <ui:SendMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </ui:SendMail.Files>
+                    </ui:SendMail>
+                    <Assign sap:VirtualizedContainerService.HintSize="434.2153846153846,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[vBoolCorreoEnviado]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502.15384615384613,256.9846153846154" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="496.24615384615385,190.5230769230769" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="434.2153846153846,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[vIntContadorErrores]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[vIntContadorErrores + 1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+        </Sequence>
+      </ui:InterruptibleDoWhile.Body>
+      <ui:InterruptibleDoWhile.Condition>
+        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="vIntContadorErrores &lt; 5 or vBoolCorreoEnviado = False" />
+      </ui:InterruptibleDoWhile.Condition>
+    </ui:InterruptibleDoWhile>
+    <If Condition="[vBoolCorreoEnviado]" sap:VirtualizedContainerService.HintSize="633.5999999999999,663.1384615384615" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,177.23076923076923" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.7846153846154,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Correo enviado.&quot;]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,304.9846153846154" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.7846153846154,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;No se pudo enviar el correo. Se realizaron 5 intentos&quot;]" />
+          <Throw Exception="[new SystemException(&quot;Error al enviar correo electrónico. Superados 5 intentos&quot;)]" sap:VirtualizedContainerService.HintSize="333.7846153846154,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_2" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="633.5999999999999,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - comp_castellano_EnviarCorreo&quot;]" />
   </Sequence>
 </Activity>

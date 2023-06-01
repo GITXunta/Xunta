@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1022.0307692307692,10446.276923076925</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1022.0307692307692,10635.323076923076</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>comp_castellano_CorreoEstadisticas_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,14 +121,14 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="comp_castellano_CorreoEstadisticas" sap:VirtualizedContainerService.HintSize="1031.6307692307691,10381.292307692307" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="comp_castellano_CorreoEstadisticas" sap:VirtualizedContainerService.HintSize="1031.6307692307691,10570.33846153846" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="969.5999999999999,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_castellano_CorreoEstadisticas&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="969.5999999999999,10012.061538461538" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="969.5999999999999,10201.107692307693" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -136,7 +136,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Secuencia principal" sap:VirtualizedContainerService.HintSize="931.9384615384615,9794.953846153845" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Secuencia principal" sap:VirtualizedContainerService.HintSize="931.9384615384615,9984" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="vStrCondition" />
             <Variable x:TypeArguments="scg:IEnumerable(ui:OrchestratorJob)" Name="vIeOrchestratorJobs" />
@@ -164,48 +164,59 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Obtener StartTime" sap:VirtualizedContainerService.HintSize="869.9076923076923,954.8307692307692" sap2010:WorkflowViewState.IdRef="Sequence_100">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="510.276923076923,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_3">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[vStrCondition]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">["Release/Name eq '"+in_strOrchestratorProcessName+"' and State eq 'Running'"]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:GetJobs FilterBuilder="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" Top="{x:Null}" DisplayName="Get Jobs" Filter="[vStrCondition]" sap:VirtualizedContainerService.HintSize="510.276923076923,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetJobs_2" Result="[vIeOrchestratorJobs]" />
-            <ui:ForEach x:TypeArguments="ui:OrchestratorJob" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="510.276923076923,544.2461538461538" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[vIeOrchestratorJobs]">
-              <ui:ForEach.Body>
-                <ActivityAction x:TypeArguments="ui:OrchestratorJob">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ui:OrchestratorJob" Name="currentItem" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.30769230769226,361.8461538461538" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="434.2153846153846,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_4">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="s:DateTime">[vDateFilteredStartTime]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="s:DateTime">[convert.ToDateTime(currentItem.StartTime)]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434.2153846153846,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[currentItem.StartTime]" />
-                    <ui:Break sap:VirtualizedContainerService.HintSize="434.2153846153846,25.107692307692307" sap2010:WorkflowViewState.IdRef="Break_2" />
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEach.Body>
-            </ui:ForEach>
-          </Sequence>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="869.9076923076923,1143.876923076923" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="634.3384615384615,1065.6" sap2010:WorkflowViewState.IdRef="Sequence_101">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Obtener StartTime" sap:VirtualizedContainerService.HintSize="572.3076923076923,954.8307692307692" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="510.276923076923,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[vStrCondition]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Release/Name eq '"+in_strOrchestratorProcessName+"' and State eq 'Running'"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:GetJobs FilterBuilder="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" Top="{x:Null}" DisplayName="Get Jobs" Filter="[vStrCondition]" sap:VirtualizedContainerService.HintSize="510.276923076923,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetJobs_2" Result="[vIeOrchestratorJobs]" />
+                  <ui:ForEach x:TypeArguments="ui:OrchestratorJob" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="510.276923076923,544.2461538461538" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[vIeOrchestratorJobs]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="ui:OrchestratorJob">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ui:OrchestratorJob" Name="currentItem" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.30769230769226,361.8461538461538" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="434.2153846153846,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:DateTime">[vDateFilteredStartTime]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:DateTime">[convert.ToDateTime(currentItem.StartTime)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434.2153846153846,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[currentItem.StartTime]" />
+                          <ui:Break sap:VirtualizedContainerService.HintSize="434.2153846153846,25.107692307692307" sap2010:WorkflowViewState.IdRef="Break_2" />
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                  </ui:ForEach>
+                </Sequence>
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
           <Sequence DisplayName="Obtener transacciones de la cola" sap:VirtualizedContainerService.HintSize="869.9076923076923,8689.476923076923" sap2010:WorkflowViewState.IdRef="Sequence_98">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -317,7 +328,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetQueueItems Duration="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_QueueFolder]" From="[vDateFilteredStartTime]" sap:VirtualizedContainerService.HintSize="586.3384615384615,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_9" QueueItemStates="Failed" QueueName="[in_QueueName]" Result="[vIeQueueFailed]" Skip="[vIntSkipCount]" Top="[vIntPageSize]" />
+                      <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_QueueFolder]" sap:VirtualizedContainerService.HintSize="586.3384615384615,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_9" QueueItemStates="Failed" QueueName="[in_QueueName]" Result="[vIeQueueFailed]" Skip="[vIntSkipCount]" Top="[vIntPageSize]" />
                       <Assign sap:VirtualizedContainerService.HintSize="586.3384615384615,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_42">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[vIntSkipCount]</OutArgument>
@@ -516,7 +527,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetQueueItems Duration="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_QueueFolder]" From="[vDateFilteredStartTime]" sap:VirtualizedContainerService.HintSize="510.276923076923,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_10" QueueItemStates="Successful" QueueName="[in_QueueName]" Result="[vIeQueueSuccess]" Skip="[vIntSkipCount]" Top="[vIntPageSize]" />
+                      <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_QueueFolder]" sap:VirtualizedContainerService.HintSize="510.276923076923,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_10" QueueItemStates="Successful" QueueName="[in_QueueName]" Result="[vIeQueueSuccess]" Skip="[vIntSkipCount]" Top="[vIntPageSize]" />
                       <Assign sap:VirtualizedContainerService.HintSize="510.276923076923,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_47">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[vIntSkipCount]</OutArgument>
@@ -674,7 +685,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetQueueItems Duration="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_QueueFolder]" From="[vDateFilteredStartTime]" sap:VirtualizedContainerService.HintSize="510.276923076923,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_11" QueueItemStates="New" QueueName="[in_QueueName]" Result="[vIeQueueNew]" Skip="[vIntSkipCount]" Top="[vIntPageSize]" />
+                      <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_QueueFolder]" sap:VirtualizedContainerService.HintSize="510.276923076923,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_11" QueueItemStates="New" QueueName="[in_QueueName]" Result="[vIeQueueNew]" Skip="[vIntSkipCount]" Top="[vIntPageSize]" />
                       <Assign sap:VirtualizedContainerService.HintSize="510.276923076923,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_51">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[vIntSkipCount]</OutArgument>
@@ -823,7 +834,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:GetQueueItems Duration="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_QueueFolder]" From="[vDateFilteredStartTime]" sap:VirtualizedContainerService.HintSize="510.276923076923,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_12" QueueItemStates="New, InProgress, Failed, Successful, Abandoned, Retried" QueueName="[in_QueueName]" Result="[vIeQueueItems]" Skip="[vIntSkipCount]" Top="[vIntPageSize]" />
+                    <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_QueueFolder]" sap:VirtualizedContainerService.HintSize="510.276923076923,140.3076923076923" sap2010:WorkflowViewState.IdRef="GetQueueItems_12" QueueItemStates="New, InProgress, Failed, Successful, Abandoned, Retried" QueueName="[in_QueueName]" Result="[vIeQueueItems]" Skip="[vIntSkipCount]" Top="[vIntPageSize]" />
                     <Assign sap:VirtualizedContainerService.HintSize="510.276923076923,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_55">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[vIntSkipCount]</OutArgument>
@@ -934,7 +945,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrRatioTotalTransacciones]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[((vIntTotalTransacciones/vIntTotalTransacciones)*100).ToString + "%"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[Math.Round((vIntTotalTransacciones/vIntTotalTransacciones)*100,2).ToString + "%"]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_51">
@@ -942,7 +953,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrRatioExitosos]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[((vIntTransaccionesSuccess/vIntTotalTransacciones)*100).ToString + "%"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[Math.Round((vIntTransaccionesSuccess/vIntTotalTransacciones)*100,2).ToString + "%"]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
@@ -950,7 +961,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrRatioBusinessEx]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[((vIntTransaccionesBE/vIntTotalTransacciones)*100).ToString + "%"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[Math.Round((vIntTransaccionesBE/vIntTotalTransacciones)*100,2).ToString + "%"]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_53">
@@ -958,7 +969,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrRatioSystemEx]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[((vIntTransaccionesSE/vIntTotalTransacciones)*100).ToString + "%"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[Math.Round((vIntTransaccionesSE/vIntTotalTransacciones)*100,2).ToString + "%"]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_54">
@@ -966,17 +977,17 @@
                         <OutArgument x:TypeArguments="x:String">[vStrRatioPendientes]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[((vIntTransaccionesNew/vIntTotalTransacciones)*100).ToString + "%"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[Math.Round((vIntTransaccionesNew/vIntTotalTransacciones)*100,2).ToString + "%"]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
               <ui:BuildDataTable DataTable="[out_dtTablaInformacion]" DisplayName="Build Data Table final" sap:VirtualizedContainerService.HintSize="422.4,59.81538461538461" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Resultado_x0020_de_x0020_la_x0020_ejecucion&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total_x0020_elementos&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ratio&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Completados correctamente&quot;,vIntTransaccionesSuccess.ToString, vStrRatioExitosos}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_18" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Excepciones de negocio&quot;,vIntTransaccionesBE.ToString, vStrRatioBusinessEx}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_19" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Errores técnicos&quot;,vIntTransaccionesSE.ToString, vStrRatioSystemEx}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_20" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Sin tratar&quot;,vIntTransaccionesNew.ToString, vStrRatioPendientes}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_21" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Completados correctamente&quot;,vIntTransaccionesSuccess.ToString, vStrRatioExitosos.Replace(&quot;.&quot;,&quot;,&quot;)}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_18" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Excepciones de negocio&quot;,vIntTransaccionesBE.ToString, vStrRatioBusinessEx.Replace(&quot;.&quot;,&quot;,&quot;)}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_19" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Errores técnicos&quot;,vIntTransaccionesSE.ToString, vStrRatioSystemEx.Replace(&quot;.&quot;,&quot;,&quot;)}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_20" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Sin tratar&quot;,vIntTransaccionesNew.ToString, vStrRatioPendientes.Replace(&quot;.&quot;,&quot;,&quot;)}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_21" />
               <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Total&quot;, vIntTotalTransacciones.ToString, &quot;-&quot;}]" DataTable="[out_dtTablaInformacion]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="422.4,181.66153846153844" sap2010:WorkflowViewState.IdRef="AddDataRow_17" />
             </Sequence>
           </Sequence>

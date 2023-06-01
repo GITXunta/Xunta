@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>943.0153846153846,2054.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>943.0153846153846,1646.7692307692307</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>func_GenerarCuerpoCorreo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,7 +103,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="func_GenerarCuerpoCorreo" sap:VirtualizedContainerService.HintSize="697.8461538461538,1989.4153846153845" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="func_GenerarCuerpoCorreo" sap:VirtualizedContainerService.HintSize="697.8461538461538,1581.7846153846153" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="vStrTextoInicialCompletado" />
       <Variable x:TypeArguments="x:String" Name="vStrTextoFinalCompletado" />
@@ -128,9 +128,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="635.8153846153846,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - func_GenerarCuerpoCorreo&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="635.8153846153846,1620.1846153846152" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="635.8153846153846,1212.553846153846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="682.3384615384615,2034.461538461538" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="554.5846153846154,995.4461538461538" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="vStrColorFondo" />
           </Sequence.Variables>
@@ -140,7 +140,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Assign: Variables de la plantilla" sap:VirtualizedContainerService.HintSize="620.3076923076923,411.3230769230769" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+          <ui:MultipleAssign DisplayName="Assign: Variables de la plantilla" sap:VirtualizedContainerService.HintSize="492.5538461538461,411.3230769230769" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -233,14 +233,14 @@
                     <OutArgument x:TypeArguments="x:String">[vStrColorUnsubscribe]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">#5c5e5d</InArgument>
+                    <InArgument x:TypeArguments="x:String">#7F869A</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:ReadTextFile File="{x:Null}" Content="[vStrPlantillaCorreo]" DisplayName="Read Text File 'Plantilla correo'" FileName="C:\Users\PU751WV\EY\AMTEGA - XUNTA - Desarrollo\99. Varios\Plantillas correo\PlantillaCorreov1.html" sap:VirtualizedContainerService.HintSize="620.3076923076923,78.27692307692307" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-          <Assign DisplayName="Assign: Reemplazar indicadores plantilla por variables" sap:VirtualizedContainerService.HintSize="620.3076923076923,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <ui:ReadTextFile File="{x:Null}" Content="[vStrPlantillaCorreo]" DisplayName="Read Text File 'Plantilla correo'" FileName="C:\Users\PU751WV\EY\AMTEGA - XUNTA - Desarrollo\99. Varios\Plantillas correo\PlantillaCorreov1.html" sap:VirtualizedContainerService.HintSize="492.5538461538461,78.27692307692307" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <Assign DisplayName="Assign: Reemplazar indicadores plantilla por variables" sap:VirtualizedContainerService.HintSize="492.5538461538461,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
             </Assign.To>
@@ -248,7 +248,7 @@
               <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo.Replace("{colorFondo}",vStrColorFondo).Replace("{colorPrincipal}", vStrColorPrincipal).Replace("{headerLogo}",vStrUrlLogoAmtega).Replace("{Titulo}", vStrTitulo).Replace("{footerLogo}",vStrUrlLogoXunta).Replace("{UnsubscribeText}", vStrUnsuscribeText).Replace("{footerText}", vStrFooterText).Replace("{footerColor}", vStrColorFooter).Replace("{colorUnsubscribe}",vStrColorUnsubscribe)]</InArgument>
             </Assign.Value>
           </Assign>
-          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_strTipoComunicacion.ToLower]" sap:VirtualizedContainerService.HintSize="620.3076923076923,1234.7076923076922" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_strTipoComunicacion.ToLower]" sap:VirtualizedContainerService.HintSize="492.5538461538461,195.69230769230768" sap2010:WorkflowViewState.IdRef="Switch`1_3">
             <Sequence x:Key="completado" sap:VirtualizedContainerService.HintSize="580.4307692307692,993.9692307692308" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
