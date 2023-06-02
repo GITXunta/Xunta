@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1234.4,3034.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234.4,3040.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CloseAllApplications_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -77,6 +77,8 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -84,7 +86,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Here all working processes will be Closed&#xA;&#xA;Add the applications you want to close to vArrApplications" DisplayName="Kill Processes" sap:VirtualizedContainerService.HintSize="774.4,2969.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Here all working processes will be Closed&#xA;&#xA;Add the applications you want to close to vArrApplications" DisplayName="Kill Processes" sap:VirtualizedContainerService.HintSize="772.8,2976" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="vStrElement" />
       <Variable x:TypeArguments="s:String[]" Name="vArrApplications" />
@@ -95,8 +97,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message - Start" sap:VirtualizedContainerService.HintSize="712,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Start Comp_CloseAllApplications&quot;]" />
-    <Assign DisplayName="Assign Nombre Navegador" sap:VirtualizedContainerService.HintSize="712,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:LogMessage DisplayName="Log message - Start" sap:VirtualizedContainerService.HintSize="710.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Start Comp_CloseAllApplications&quot;]" />
+    <Assign DisplayName="Assign Nombre Navegador" sap:VirtualizedContainerService.HintSize="710.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[vArrApplications]</OutArgument>
       </Assign.To>
@@ -104,13 +106,13 @@
         <InArgument x:TypeArguments="s:String[]">[{"chrome"}]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For each process to close" sap:VirtualizedContainerService.HintSize="712,2395.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[vArrApplications]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For each process to close" sap:VirtualizedContainerService.HintSize="710.4,2401.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[vArrApplications]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="678.4,2207.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="676.8,2213.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="vBoolExists" />
             </Sequence.Variables>
@@ -119,7 +121,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign selector" sap:VirtualizedContainerService.HintSize="635.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Assign selector" sap:VirtualizedContainerService.HintSize="633.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[vStrElement]</OutArgument>
               </Assign.To>
@@ -127,26 +129,26 @@
                 <InArgument x:TypeArguments="x:String">["&lt;wnd app='" + item.ToString + ".exe' /&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:UiElementExists DisplayName="Element Exists - App window" Exists="[vBoolExists]" sap:VirtualizedContainerService.HintSize="635.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Element Exists  App window" Exists="[vBoolExists]" sap:VirtualizedContainerService.HintSize="633.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c2135652-c15e-4290-b260-22893c94c2d9" InformativeScreenshot="abaa9a7fac89e6a079f48fefdd9927c5" Selector="[vStrElement]" TimeoutMS="3000" WaitForReady="COMPLETE" />
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[vBoolExists]" DisplayName="If application is opened" sap:VirtualizedContainerService.HintSize="635.2,1848.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[vBoolExists]" DisplayName="If application is opened" sap:VirtualizedContainerService.HintSize="633.6,1855.2" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Closing application" sap:VirtualizedContainerService.HintSize="601.6,1665.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Closing application" sap:VirtualizedContainerService.HintSize="600,1672" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log message - Info" sap:VirtualizedContainerService.HintSize="558.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Application &quot; + item.ToString + &quot; is closing...&quot;]" />
-                  <ui:CloseApplication DisplayName="Close application" sap:VirtualizedContainerService.HintSize="558,107" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+                  <ui:LogMessage DisplayName="Log message - Aplicacion cerrando" sap:VirtualizedContainerService.HintSize="556.8,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Application &quot; + item.ToString + &quot; is closing...&quot;]" />
+                  <ui:CloseApplication DisplayName="Close application" sap:VirtualizedContainerService.HintSize="556.8,107.2" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
                     <ui:CloseApplication.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd654963-38a8-4458-924c-98c852b90530" InformativeScreenshot="538020e8dc325895ac3da0286a451877" Selector="[vStrElement]" TimeoutMS="3000" WaitForReady="COMPLETE" />
                     </ui:CloseApplication.Target>
                   </ui:CloseApplication>
-                  <Sequence DisplayName="Wait for application to close" sap:VirtualizedContainerService.HintSize="558,925" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Wait for application to close" sap:VirtualizedContainerService.HintSize="556.8,928.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="s:DateTime" Name="vDateTimeOut" />
                     </Sequence.Variables>
@@ -156,7 +158,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="496,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign sap:VirtualizedContainerService.HintSize="494.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
                       <Assign.To>
                         <OutArgument x:TypeArguments="s:DateTime">[vDateTimeOut]</OutArgument>
                       </Assign.To>
@@ -164,7 +166,7 @@
                         <InArgument x:TypeArguments="s:DateTime">[now]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <DoWhile DisplayName="Do While element is not closed yet" sap:VirtualizedContainerService.HintSize="496,692" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+                    <DoWhile DisplayName="Do While element is not closed yet" sap:VirtualizedContainerService.HintSize="494.4,695.2" sap2010:WorkflowViewState.IdRef="DoWhile_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,34 +174,40 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <DoWhile.Condition>[vBoolExists andAlso now.Subtract(vdatetimeout).TotalSeconds&lt;in_IntCloseAppTimeOut]</DoWhile.Condition>
-                      <Sequence DisplayName="Check application is closed" sap:VirtualizedContainerService.HintSize="450,530" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Check application is closed" sap:VirtualizedContainerService.HintSize="449.6,532.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:UiElementExists DisplayName="Element Exists - App window" Exists="[vBoolExists]" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                        <ui:UiElementExists DisplayName="Element Exists - App window" Exists="[vBoolExists]" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                           <ui:UiElementExists.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="78af5649-55d4-4fcb-bc34-aee3ba0e434c" InformativeScreenshot="ee3826012cd59bcdf8ef06f3d37b3b98" Selector="[vStrElement]" TimeoutMS="500" WaitForReady="COMPLETE" />
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
-                        <If Condition="[vBoolExists]" DisplayName="If application is not closed yet" sap:VirtualizedContainerService.HintSize="388,272" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If Condition="[vBoolExists]" DisplayName="If application is not closed yet" sap:VirtualizedContainerService.HintSize="387.2,273.6" sap2010:WorkflowViewState.IdRef="If_3">
                           <If.Then>
-                            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_7" />
+                            <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
                           </If.Else>
                         </If>
                       </Sequence>
                     </DoWhile>
                   </Sequence>
-                  <If Condition="[vBoolExists]" DisplayName="If application is still opened, kill" sap:VirtualizedContainerService.HintSize="558,315" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[vBoolExists]" DisplayName="If application is still opened, kill" sap:VirtualizedContainerService.HintSize="556.8,317.6" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="[item]" />
+                      <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334.4,134.4" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="[item]" />
                     </If.Then>
                     <If.Else>
-                      <ui:LogMessage DisplayName="Log message - Info" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Application &quot; + item.ToString + &quot; closed correctly&quot;]" />
+                      <ui:LogMessage DisplayName="Log message - Aplicacion cerrada" sap:VirtualizedContainerService.HintSize="333.6,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Application &quot; + item.ToString + &quot; closed correctly&quot;]" />
                     </If.Else>
                   </If>
                 </Sequence>

@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>941.5384615384614,2325.4153846153845</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>959.2615384615384,982.1538461538461</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Comp_WandaNavegarAExpediente_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -104,25 +104,25 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="comp_WANDA_castellano_NavegarAExpediente" sap:VirtualizedContainerService.HintSize="605.5384615384615,2260.4307692307693" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="comp_WANDA_castellano_NavegarAExpediente" sap:VirtualizedContainerService.HintSize="551.6307692307691,917.1692307692307" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="543.5076923076923,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_WANDA_castellano_NavegarAExpediente&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="543.5076923076923,1891.1999999999998" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="489.59999999999997,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_WANDA_castellano_NavegarAExpediente&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="489.59999999999997,547.9384615384615" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:String" Default="https://ptwanda.stg.xunta.local/ptwanda-web/inicio/crearMenuClasico.action?idSeccion=" Name="vStrWandaURL" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Wanda - Inicio" sap:VirtualizedContainerService.HintSize="505.8461538461538,1674.0923076923077" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="f28cd119-3b8a-4504-86f1-2452383fdc07" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Wanda - Inicio" sap:VirtualizedContainerService.HintSize="505.8461538461538,2018.9538461538461" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="f28cd119-3b8a-4504-86f1-2452383fdc07" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence sap2010:Annotation.AnnotationText="Una vez abierto el navegador se buscará en la página un expediente en función  del procedimiento de interés y de su número." DisplayName="Navegar a expediente" sap:VirtualizedContainerService.HintSize="471.87692307692305,1457.7230769230769" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap2010:Annotation.AnnotationText="Una vez abierto el navegador se buscará en la página un expediente en función  del procedimiento de interés y de su número." DisplayName="Navegar a expediente" sap:VirtualizedContainerService.HintSize="471.87692307692305,1762.7076923076922" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="vBoolExisteExpediente" />
                 </Sequence.Variables>
@@ -244,7 +244,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:UiElementExists>
-                <If sap2010:Annotation.AnnotationText="Se comprueba si existe el expediente que se está buscando. En caso de que si exista se abrirá la opción de editar documento; en caso contrario se lanzará un &quot;throw&quot;." Condition="[vBoolExisteExpediente]" DisplayName="If Existe expediente" sap:VirtualizedContainerService.HintSize="409.8461538461538,427.5692307692307" sap2010:WorkflowViewState.IdRef="If_1">
+                <If sap2010:Annotation.AnnotationText="Se comprueba si existe el expediente que se está buscando. En caso de que si exista se abrirá la opción de editar documento; en caso contrario se lanzará un &quot;throw&quot;." Condition="[vBoolExisteExpediente]" DisplayName="If Existe expediente" sap:VirtualizedContainerService.HintSize="409.8461538461538,732.5538461538462" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -299,10 +299,10 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="509.5384615384615,19.93846153846154" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="455.6307692307692,394.3384615384615" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -310,19 +310,19 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="449.7230769230769,287.26153846153846" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap:VirtualizedContainerService.HintSize="449.7230769230769,327.87692307692305" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.6923076923077,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[exception.Message]" />
-              <Throw Exception="[new BusinessRuleException(&quot;Error al navegar al expediente en Wanda&quot;)]" sap:VirtualizedContainerService.HintSize="387.6923076923077,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <Throw Exception="[new SystemException(&quot;Error al navegar al expediente en Wanda&quot;)]" sap:VirtualizedContainerService.HintSize="387.6923076923077,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message 'Final'" sap:VirtualizedContainerService.HintSize="543.5076923076923,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - comp_WANDA_castellano_NavegarAExpediente&quot;]" />
+    <ui:LogMessage DisplayName="Log Message 'Final'" sap:VirtualizedContainerService.HintSize="489.59999999999997,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - comp_WANDA_castellano_NavegarAExpediente&quot;]" />
   </Sequence>
 </Activity>

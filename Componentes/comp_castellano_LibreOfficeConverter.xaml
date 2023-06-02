@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>959.2615384615384,1259.076923076923</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>542.0307692307692,982.1538461538461</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Comp_LibreOfficeConverter_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -86,7 +86,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="comp_castellano_LibreOfficeConverter" sap:VirtualizedContainerService.HintSize="584.1230769230768,1194.0923076923077" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="comp_castellano_LibreOfficeConverter" sap:VirtualizedContainerService.HintSize="551.6307692307691,917.1692307692307" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="vStrLibreOfficeExePath" />
       <Variable x:TypeArguments="x:String" Name="vStrFilePath" />
@@ -99,10 +99,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 'Start'" sap:VirtualizedContainerService.HintSize="522.0923076923077,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_castellano_LibreOfficeConverter&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522.0923076923077,824.8615384615384" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message 'Start'" sap:VirtualizedContainerService.HintSize="489.59999999999997,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_castellano_LibreOfficeConverter&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="489.59999999999997,547.9384615384615" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="484.4307692307692,607.7538461538461" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Convertir a LibreOffice" sap:VirtualizedContainerService.HintSize="484.4307692307692,607.7538461538461" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -184,10 +184,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488.1230769230769,19.93846153846154" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="455.6307692307692,394.3384615384615" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -202,12 +202,12 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.6923076923077,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[exception.Message]" />
-              <Throw Exception="[new BusinessRuleException(&quot;Error al convertir '&quot; + vStrFilePath +&quot;' al formato '&quot; + in_strToFormat+ &quot;'&quot;)]" sap:VirtualizedContainerService.HintSize="387.6923076923077,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <Throw Exception="[new SystemException(&quot;Error al convertir '&quot; + vStrFilePath +&quot;' al formato '&quot; + in_strToFormat+ &quot;'&quot;)]" sap:VirtualizedContainerService.HintSize="387.6923076923077,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message 'End'" sap:VirtualizedContainerService.HintSize="522.0923076923077,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - comp_castellano_LibreOfficeConverter&quot;]" />
+    <ui:LogMessage DisplayName="Log Message 'End'" sap:VirtualizedContainerService.HintSize="489.59999999999997,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - comp_castellano_LibreOfficeConverter&quot;]" />
   </Sequence>
 </Activity>

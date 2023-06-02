@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="in_strWandaOrchCredFolder" Type="InArgument(x:String)" />
     <x:Property Name="in_strWandaOrchCredName" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>959.2615384615384,4331.815384615385</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>959.2615384615384,982.1538461538461</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Comp_WandaLogin_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -91,24 +92,26 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="comp_WANDA_castellano_Login" sap:VirtualizedContainerService.HintSize="743.6307692307691,4266.830769230769" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="comp_WANDA_castellano_Login" sap:VirtualizedContainerService.HintSize="551.6307692307691,917.1692307692307" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="681.5999999999999,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_WANDA_castellano_Login&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="681.5999999999999,3897.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="489.59999999999997,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_WANDA_castellano_Login&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="489.59999999999997,547.9384615384615" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Secuencia Principal" sap:VirtualizedContainerService.HintSize="643.9384615384615,3680.4923076923073" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Secuencia Principal" sap:VirtualizedContainerService.HintSize="643.9384615384615,3929.353846153846" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="vBoolElementExistBienvenida" />
             <Variable x:TypeArguments="ui:Image" Name="vImgErrorScreenshot" />
             <Variable x:TypeArguments="x:String" Name="vStrUsername" />
             <Variable x:TypeArguments="x:Boolean" Name="vBoolCredencialesInvalidas" />
-            <Variable x:TypeArguments="x:String" Default="https://ptwanda.stg.xunta.local/ptwanda-web" Name="vStrWandaLoginURL" />
+            <Variable x:TypeArguments="x:String" Default="https://cas.stg.xunta.local/cas/login?service=https%3A%2F%2Fptwanda.stg.xunta.local%2Fptwanda-web%2F" Name="vStrWandaLoginURL" />
             <Variable x:TypeArguments="ss:SecureString" Name="vSecstrPassword" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
@@ -127,13 +130,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:GetRobotCredential>
-          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Se abre el navegador Chrome y accede a la URL del Login Wanda" BrowserType="Chrome" DisplayName="Abrir navegador Chrome" sap:VirtualizedContainerService.HintSize="581.9076923076923,3389.5384615384614" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[vStrWandaLoginURL]">
+          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Se abre el navegador Chrome y accede a la URL del Login Wanda" BrowserType="Chrome" DisplayName="Abrir navegador Chrome" sap:VirtualizedContainerService.HintSize="581.9076923076923,3638.3999999999996" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[vStrWandaLoginURL]">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="547.9384615384615,3258.0923076923077" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="547.9384615384615,3506.953846153846" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,11 +145,7 @@
                   <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="485.9076923076923,25.107692307692307" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
                   <ui:UiElementExists sap2010:Annotation.AnnotationText="Se busca el mensaje de bienvenida a Wanda." DisplayName="Element Exists 'Mensaje de bienvenida Inicial'" Exists="[vBoolElementExistBienvenida]" sap:VirtualizedContainerService.HintSize="485.9076923076923,138.09230769230768" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e3611a41-16e3-449e-9cad-6db7faf49c9d" InformativeScreenshot="5fa22922ce12e9d801cb89d7c16f9e46" Selector="&lt;html app='chrome.exe' title='Wanda - Inicio' /&gt;&lt;webctrl id='titulo-bienvenida' tag='DIV' aaname='*Wanda' /&gt;" WaitForReady="COMPLETE">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                      </ui:Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e3611a41-16e3-449e-9cad-6db7faf49c9d" InformativeScreenshot="5fa22922ce12e9d801cb89d7c16f9e46" Selector="&lt;html app='chrome.exe' title='Wanda - Inicio' /&gt;&lt;webctrl id='titulo-bienvenida' tag='DIV' aaname='*Wanda' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -237,11 +236,7 @@
                   </ui:Click>
                   <ui:UiElementExists sap2010:Annotation.AnnotationText="Se busca el mensaje &quot;Credenciales inválidas&quot; que ocurre cuando Wanda no reconoce esas credenciales." DisplayName="Element Exists 'Credenciales inválidas'" Exists="[vBoolCredencialesInvalidas]" sap:VirtualizedContainerService.HintSize="485.9076923076923,145.47692307692307" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69102eb5-27b2-4301-be38-4717020d934f" InformativeScreenshot="ee079d8598760360298e771967103853" Selector="&lt;html app='chrome.exe' title='CAS - Xunta de Galicia' /&gt;&lt;webctrl aria-role='alert' tag='DIV' /&gt;" WaitForReady="COMPLETE">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                      </ui:Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69102eb5-27b2-4301-be38-4717020d934f" InformativeScreenshot="ee079d8598760360298e771967103853" Selector="&lt;html app='chrome.exe' title='CAS - Xunta de Galicia' /&gt;&lt;webctrl aria-role='alert' tag='DIV' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -251,11 +246,7 @@
                   </ui:UiElementExists>
                   <ui:UiElementExists sap2010:Annotation.AnnotationText="Se vuelve a buscar el mensaje de bienvenida a Wanda." DisplayName="Element Exists 'Mensaje de bienvenida tras Cierre Sesion'" Exists="[vBoolElementExistBienvenida]" sap:VirtualizedContainerService.HintSize="485.9076923076923,138.09230769230768" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e3611a41-16e3-449e-9cad-6db7faf49c9d" InformativeScreenshot="5fa22922ce12e9d801cb89d7c16f9e46" Selector="&lt;html app='chrome.exe' title='Wanda - Inicio' /&gt;&lt;webctrl id='titulo-bienvenida' tag='DIV' aaname='*Wanda' /&gt;" WaitForReady="COMPLETE">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                      </ui:Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e3611a41-16e3-449e-9cad-6db7faf49c9d" InformativeScreenshot="5fa22922ce12e9d801cb89d7c16f9e46" Selector="&lt;html app='chrome.exe' title='Wanda - Inicio' /&gt;&lt;webctrl id='titulo-bienvenida' tag='DIV' aaname='*Wanda' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -263,14 +254,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:UiElementExists>
-                  <If sap2010:Annotation.AnnotationText="Si Wanda no reconoce las credenciales introducidas, hay que lanzar un Throw." Condition="[vBoolCredencialesInvalidas]" DisplayName="If No se reconoce las credenciales" sap:VirtualizedContainerService.HintSize="485.9076923076923,1617.9692307692308" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If sap2010:Annotation.AnnotationText="Si Wanda no reconoce las credenciales introducidas, hay que lanzar un Throw." Condition="[vBoolCredencialesInvalidas]" DisplayName="If No se reconoce las credenciales" sap:VirtualizedContainerService.HintSize="485.9076923076923,1866.8307692307692" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,568.6153846153845" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,451.9384615384615" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,48 +276,65 @@
                             </ui:Target>
                           </ui:TakeScreenshot.Target>
                         </ui:TakeScreenshot>
-                        <ui:Comment sap:VirtualizedContainerService.HintSize="333.7846153846154,76.8" sap2010:WorkflowViewState.IdRef="Comment_2" Text="&#xA;Implementar función de envio de correo electrónico" />
                         <ui:LogMessage DisplayName="Log Message Error: Credenciales no válidas" sap:VirtualizedContainerService.HintSize="333.7846153846154,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Error: Las credenciales no son válidas&quot;]" />
-                        <Throw DisplayName="Throw Credenciales invalidas" Exception="[new BusinessRuleException(&quot;Error en el inicio de sesión: Las credenciales no son válidas.&quot;)]" sap:VirtualizedContainerService.HintSize="333.7846153846154,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                        <Throw DisplayName="Throw Credenciales invalidas" Exception="[new SystemException(&quot;Error en el inicio de sesión: Las credenciales no son válidas.&quot;)]" sap:VirtualizedContainerService.HintSize="333.7846153846154,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_4" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="451.9384615384615,837.4153846153846" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence sap:VirtualizedContainerService.HintSize="451.9384615384615,1202.9538461538461" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[vBoolElementExistBienvenida &lt;&gt; True]" DisplayName="If NO Existe mensaje de bienvenida" sap:VirtualizedContainerService.HintSize="409.8461538461538,749.5384615384615" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If Condition="[vBoolElementExistBienvenida &lt;&gt; True]" DisplayName="If NO Existe mensaje de bienvenida" sap:VirtualizedContainerService.HintSize="409.8461538461538,1115.076923076923" sap2010:WorkflowViewState.IdRef="If_1">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,568.6153846153845" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,756.9230769230769" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="vStrCorreo" />
+                                <Variable x:TypeArguments="x:String" Name="vStrScreenshotPath" />
+                              </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'Wanda Tab'" sap:VirtualizedContainerService.HintSize="333.7846153846154,107.07692307692307" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[vImgErrorScreenshot]">
-                                <ui:TakeScreenshot.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c8f85d28-d873-4221-9aa6-42fe2e4cfa6b" InformativeScreenshot="e3abb747b6aff9bcd8c3110c85d03d7a" WaitForReady="COMPLETE">
-                                    <ui:Target.TimeoutMS>
-                                      <InArgument x:TypeArguments="x:Int32" />
-                                    </ui:Target.TimeoutMS>
-                                  </ui:Target>
-                                </ui:TakeScreenshot.Target>
-                              </ui:TakeScreenshot>
-                              <ui:Comment sap:VirtualizedContainerService.HintSize="333.7846153846154,76.8" sap2010:WorkflowViewState.IdRef="Comment_1" Text="&#xA;Implementar función de envio de correo electrónico" />
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.7846153846154,110.76923076923076" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
+                                  <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[vStrScreenshotPath]</InOutArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Componentes\comp_castellano_GenerarCuerpoCorreo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.7846153846154,110.76923076923076" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Componentes\comp_castellano_GenerarCuerpoCorreo.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTipoComunicacion">incidencia</InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_strCorreo">[vStrCorreo]</OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strExceptionType">Error de negocio</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strExceptionMessage">Error en el inicio de sesión: Credenciales válidas pero el usuario no está dado de alta en la aplicación</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTextoGenericoCorreo" />
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Componentes\comp_castellano_EnviarCorreo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.7846153846154,110.76923076923076" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Componentes\comp_castellano_EnviarCorreo.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strCorreoDestinatario" />
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAsuntoCorreo" />
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strCuerpoCorreo">[vStrCorreo]</InArgument>
+                                  <InArgument x:TypeArguments="s:String[]" x:Key="in_ArrArchivosAdjuntos">[{vStrScreenshotPath}]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
                               <ui:LogMessage DisplayName="Log Message Credenciales validas pero sin acceso" sap:VirtualizedContainerService.HintSize="333.7846153846154,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Error: Las credenciales son válidas pero no se tiene acceso a la aplicación&quot;]" />
                               <Throw DisplayName="Throw Error al iniciar sesion" Exception="[new BusinessRuleException(&quot;Error en el inicio de sesión: Credenciales válidas pero el usuario no está dado de alta en la aplicación.&quot;)]" sap:VirtualizedContainerService.HintSize="333.7846153846154,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_2" />
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376.8,198.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,177.23076923076923" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message Sesion iniciada correctamente" sap:VirtualizedContainerService.HintSize="333.6,108.80000000000001" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Sesión iniciada correctamente&quot;]" />
+                              <ui:LogMessage DisplayName="Log Message Sesion iniciada correctamente" sap:VirtualizedContainerService.HintSize="333.7846153846154,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Sesión iniciada correctamente&quot;]" />
                             </Sequence>
                           </If.Else>
                         </If>
@@ -345,10 +353,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="647.6307692307691,19.93846153846154" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="455.6307692307692,394.3384615384615" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -356,19 +364,19 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="449.7230769230769,330.09230769230766" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence sap:VirtualizedContainerService.HintSize="449.7230769230769,327.87692307692305" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.6923076923077,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[exception.Message]" />
-              <Throw Exception="[new BusinessRuleException(&quot;Error en el proceso de inicio de sesión en Wanda: &quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="387.6923076923077,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <Throw Exception="[new SystemException(&quot;Error en el proceso de inicio de sesión en Wanda: &quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="387.6923076923077,87.87692307692308" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message 'Final'" sap:VirtualizedContainerService.HintSize="681.5999999999999,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - comp_WANDA_castellano_Login&quot;]" />
+    <ui:LogMessage DisplayName="Log Message 'Final'" sap:VirtualizedContainerService.HintSize="489.59999999999997,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - comp_WANDA_castellano_Login&quot;]" />
   </Sequence>
 </Activity>
