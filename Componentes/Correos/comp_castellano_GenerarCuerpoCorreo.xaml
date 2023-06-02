@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>943.0153846153846,1646.7692307692307</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>962.2153846153846,2054.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>func_GenerarCuerpoCorreo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,7 +103,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="func_GenerarCuerpoCorreo" sap:VirtualizedContainerService.HintSize="697.8461538461538,1581.7846153846153" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="func_GenerarCuerpoCorreo" sap:VirtualizedContainerService.HintSize="697.8461538461538,1989.4153846153845" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="vStrTextoInicialCompletado" />
       <Variable x:TypeArguments="x:String" Name="vStrTextoFinalCompletado" />
@@ -128,9 +128,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="635.8153846153846,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - func_GenerarCuerpoCorreo&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="635.8153846153846,1212.553846153846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="635.8153846153846,1620.1846153846152" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="554.5846153846154,995.4461538461538" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="598.1538461538461,1403.076923076923" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="vStrColorFondo" />
           </Sequence.Variables>
@@ -140,7 +140,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Assign: Variables de la plantilla" sap:VirtualizedContainerService.HintSize="492.5538461538461,411.3230769230769" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+          <ui:MultipleAssign DisplayName="Assign: Variables de la plantilla" sap:VirtualizedContainerService.HintSize="536.1230769230768,411.3230769230769" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -172,7 +172,7 @@
                     <OutArgument x:TypeArguments="x:String">[vStrTitulo]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">&lt;b&gt;Impacto Autónomo &lt;/b&gt;&lt;br&gt;(TR_005)</InArgument>
+                    <InArgument x:TypeArguments="x:String">["&lt;b&gt;"+in_Config("NombreProceso").ToString+"&lt;/b&gt;&lt;br&gt;("+in_Config("IdentificadorProceso").ToString+")"]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
@@ -239,8 +239,8 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:ReadTextFile File="{x:Null}" Content="[vStrPlantillaCorreo]" DisplayName="Read Text File 'Plantilla correo'" FileName="C:\Users\PU751WV\EY\AMTEGA - XUNTA - Desarrollo\99. Varios\Plantillas correo\PlantillaCorreov1.html" sap:VirtualizedContainerService.HintSize="492.5538461538461,78.27692307692307" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-          <Assign DisplayName="Assign: Reemplazar indicadores plantilla por variables" sap:VirtualizedContainerService.HintSize="492.5538461538461,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <ui:ReadTextFile File="{x:Null}" Content="[vStrPlantillaCorreo]" DisplayName="Read Text File 'Plantilla correo'" FileName="[in_Config(&quot;PlantillaCorreo&quot;).ToString]" sap:VirtualizedContainerService.HintSize="536.1230769230768,78.27692307692307" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <Assign DisplayName="Assign: Reemplazar indicadores plantilla por variables" sap:VirtualizedContainerService.HintSize="536.1230769230768,79.75384615384615" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
             </Assign.To>
@@ -248,7 +248,7 @@
               <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo.Replace("{colorFondo}",vStrColorFondo).Replace("{colorPrincipal}", vStrColorPrincipal).Replace("{headerLogo}",vStrUrlLogoAmtega).Replace("{Titulo}", vStrTitulo).Replace("{footerLogo}",vStrUrlLogoXunta).Replace("{UnsubscribeText}", vStrUnsuscribeText).Replace("{footerText}", vStrFooterText).Replace("{footerColor}", vStrColorFooter).Replace("{colorUnsubscribe}",vStrColorUnsubscribe)]</InArgument>
             </Assign.Value>
           </Assign>
-          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_strTipoComunicacion.ToLower]" sap:VirtualizedContainerService.HintSize="492.5538461538461,195.69230769230768" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_strTipoComunicacion.ToLower]" sap:VirtualizedContainerService.HintSize="536.1230769230768,603.3230769230769" sap2010:WorkflowViewState.IdRef="Switch`1_3">
             <Sequence x:Key="completado" sap:VirtualizedContainerService.HintSize="580.4307692307692,993.9692307692308" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -272,7 +272,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrTextoInicialCompletado]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["Se ha completado correctamente la ejecución del proceso de &lt;b&gt;Impacto Autónomo&lt;/b&gt; (TR_005) del día &lt;b&gt;"  + vDateFechaActual.ToString("dd 'de' MMMM 'de' yyyy", New System.Globalization.CultureInfo("es-ES")) +  "&lt;/b&gt; a las &lt;b&gt;"  + vDateFechaActual.ToString("HH:mm:ss") + "&lt;/b&gt;."]</InArgument>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["Se ha completado correctamente la ejecución del proceso automatizado &lt;b&gt;'"+in_Config("NombreProceso").ToString+"'&lt;/b&gt; ("+in_Config("IdentificadorProceso").ToString+") del día &lt;b&gt;"  + vDateFechaActual.ToString("dd 'de' MMMM 'de' yyyy", New System.Globalization.CultureInfo("es-ES")) +  "&lt;/b&gt; a las &lt;b&gt;"  + vDateFechaActual.ToString("HH:mm:ss") + "&lt;/b&gt;."]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
@@ -280,7 +280,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrTextoFinalCompletado]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">Se adjunta en este correo el informe de ejecución completado con información de cada elemento procesado.&lt;br&gt;</InArgument>
+                        <InArgument x:TypeArguments="x:String">Se adjunta en este correo el informe de ejecución completado con información de cada elemento procesado.&lt;br&gt;&lt;br&gt;</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                   </scg:List>
@@ -384,7 +384,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrTextoInicialParadaAntesInicio]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">Se ha producido un error al iniciarse la ejecución del proceso de &lt;b&gt;Impacto Autónomo&lt;/b&gt; (TR_005) que ha hecho que se detenga sin haber empezado a ejecutarse.&lt;br&gt;&lt;br&gt;El Equipo de Soporte de Automatización Inteligente ya ha sido informado.&lt;br&gt;&lt;br&gt;No se requiere ninguna acción por su parte. El Equipo de Soporte de Automatización Inteligente trabajará para que el proceso termine de ejecutarse correctamente y, en caso necesario, se pondrá en contacto con usted.</InArgument>
+                        <InArgument x:TypeArguments="x:String">["Se ha producido un error al iniciarse la ejecución del proceso automatizado &lt;b&gt;'"+in_Config("NombreProceso").ToString+"'&lt;/b&gt; ("+in_Config("IdentificadorProceso").ToString+") que ha hecho que se detenga sin haber empezado a ejecutarse.&lt;br&gt;&lt;br&gt;El Equipo de Soporte de Automatización Inteligente ya ha sido informado.&lt;br&gt;&lt;br&gt;No se requiere ninguna acción por su parte. El Equipo de Soporte de Automatización Inteligente trabajará para que el proceso termine de ejecutarse correctamente y, en caso necesario, se pondrá en contacto con usted."]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_49">
@@ -432,7 +432,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrTextoInicioError]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">Se ha producido un error durante la ejecución del proceso &lt;b&gt;{NombreProceso}&lt;/b&gt;.&lt;br&gt;&lt;br&gt; &amp;bull; &lt;b&gt;Tipo de Error:&lt;/b&gt; {TipoError}&lt;br&gt;&amp;bull; &lt;b&gt;Mensaje:&lt;/b&gt; {MensajeError}</InArgument>
+                        <InArgument x:TypeArguments="x:String">Se ha producido un error durante la ejecución del proceso automatizado &lt;b&gt;{NombreProceso}&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;bull; &lt;b&gt;Tipo de Error:&lt;/b&gt; {TipoError}.&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;bull; &lt;b&gt;Mensaje:&lt;/b&gt; {MensajeError}.</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
@@ -440,7 +440,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrTextoInicioError]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[vStrTextoInicioError.Replace("{NombreProceso}","Impacto Autonomo (TR_008)").Replace("{TipoError}", in_strExceptionType).Replace("{MensajeError}", in_strExceptionMessage)]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[vStrTextoInicioError.Replace("{NombreProceso}", "&lt;b&gt;'" +in_Config("NombreProceso").ToString + "&lt;/b&gt;' " + in_Config("IdentificadorProceso").ToString).Replace("{TipoError}", in_strExceptionType).Replace("{MensajeError}", in_strExceptionMessage)]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_53">
@@ -474,7 +474,7 @@
                   <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[vStrPlantillaCorreo.Replace("&lt;td align='center' valign='top' bgcolor='#edeff2' style='padding: 10px 10px 40px; font-size: 14px; font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; line-height: 20px; color: #ffffff;'&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='70%' style='border-collapse: collapse; border-radius: 10px; overflow: hidden; text-align: center;'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='100%' style='text-align: center;  font-size: 13px;' class='table-rounded'&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Resultados de la ejecución&lt;/th&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Total de elementos&lt;/th&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Ratio&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;{filaTabla}&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;","").Replace("&lt;br&gt;{TextoFinal}&lt;/br&gt;", "")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[vStrPlantillaCorreo.Replace("&lt;td align='center' valign='top' bgcolor='"+vStrColorFondo+"' style='padding: 10px 10px 40px; font-size: 14px; font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; line-height: 20px; color: #ffffff;'&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='70%' style='border-collapse: collapse; border-radius: 10px; overflow: hidden; text-align: center;'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='100%' style='text-align: center;  font-size: 13px;' class='table-rounded'&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style='padding: 10px; background-color: "+vStrColorPrincipal+"; color: #ffffff; text-align: center;'&gt;Resultados de la ejecución&lt;/th&gt;&lt;th style='padding: 10px; background-color: "+vStrColorPrincipal+"; color: #ffffff; text-align: center;'&gt;Total de elementos&lt;/th&gt;&lt;th style='padding: 10px; background-color: "+vStrColorPrincipal+"; color: #ffffff; text-align: center;'&gt;Ratio&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;{filaTabla}&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;","").Replace("&lt;br&gt;{TextoFinal}&lt;/br&gt;", "")]</InArgument>
                 </Assign.Value>
               </Assign>
               <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434.2153846153846,132.18461538461537" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
@@ -515,7 +515,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="449.7230769230769,327.87692307692305" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap:VirtualizedContainerService.HintSize="449.7230769230769,287.26153846153846" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

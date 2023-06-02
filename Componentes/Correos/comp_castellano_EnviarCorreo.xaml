@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>686.0307692307692,1992.3692307692306</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>962.2153846153846,2654.7692307692305</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>comp_castellano_EnviarCorreo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +116,7 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="comp_castellano_EnviarCorreo" sap:VirtualizedContainerService.HintSize="695.6307692307691,1927.3846153846152" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="comp_castellano_EnviarCorreo" sap:VirtualizedContainerService.HintSize="707.4461538461538,2589.7846153846153" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="vBoolCorreoEnviado" />
       <Variable x:TypeArguments="x:Int32" Name="vIntContadorErrores" />
@@ -126,8 +126,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="633.5999999999999,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_castellano_EnviarCorreo&quot;]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="633.5999999999999,132.18461538461537" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="645.4153846153846,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - comp_castellano_EnviarCorreo&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="645.4153846153846,132.18461538461537" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -149,15 +149,15 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="633.5999999999999,683.0769230769231" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile Condition="[vIntContadorErrores &lt; 5 and vBoolCorreoEnviado = False]" CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="645.4153846153846,1345.476923076923" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="{x:Null}">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="598.1538461538461,521.3538461538461" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="609.9692307692308,1183.753846153846" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="536.1230769230768,410.58461538461535" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="547.9384615384615,1072.9846153846154" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <TryCatch.Variables>
               <Variable x:TypeArguments="x:String" Default="smtp.gmail.com" Name="vStrServidorCorreo" />
               <Variable x:TypeArguments="x:Int32" Default="465" Name="vIntPuertoCorreo" />
@@ -173,7 +173,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[in_strCuerpoCorreo]" DisplayName="Send mail" Email="[vStrCorreoOrigenUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434.2153846153846,129.96923076923076" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Password="[vStrCorreoOrigenPass]" Port="[vIntPuertoCorreo]" SecureConnection="Auto" Server="[vStrServidorCorreo]" Subject="[in_strAsuntoCorreo]" To="[in_strCorreoDestinatario]">
+                    <ui:SendMail AttachmentsCollection="{x:Null}" Bcc="{x:Null}" Body="[in_strCuerpoCorreo]" Cc="{x:Null}" DisplayName="Send mail" Email="[vStrCorreoOrigenUser]" EnableSSL="True" From="{x:Null}" sap:VirtualizedContainerService.HintSize="434.2153846153846,129.96923076923076" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" MailMessage="{x:Null}" Name="{x:Null}" Password="[vStrCorreoOrigenPass]" Port="[vIntPuertoCorreo]" ReplyTo="{x:Null}" SecureConnection="Auto" SecurePassword="{x:Null}" Server="[vStrServidorCorreo]" Subject="[in_strAsuntoCorreo]" TimeoutMS="{x:Null}" To="[in_strCorreoDestinatario]" UseOAuth="{x:Null}">
                       <ui:SendMail.Files>
                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                       </ui:SendMail.Files>
@@ -195,7 +195,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[in_ArrArchivosAdjuntos]" Body="[in_strCuerpoCorreo]" DisplayName="Send mail" Email="[vStrCorreoOrigenUser]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434.2153846153846,129.96923076923076" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="True" Password="[vStrCorreoOrigenPass]" Port="[vIntPuertoCorreo]" SecureConnection="Auto" Server="[vStrServidorCorreo]" Subject="[in_strAsuntoCorreo]" To="[in_strCorreoDestinatario]">
+                    <ui:SendMail AttachmentsCollection="[in_ArrArchivosAdjuntos]" Bcc="{x:Null}" Body="[in_strCuerpoCorreo]" Cc="{x:Null}" DisplayName="Send mail" Email="[vStrCorreoOrigenUser]" EnableSSL="True" From="{x:Null}" sap:VirtualizedContainerService.HintSize="434.2153846153846,129.96923076923076" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="True" MailMessage="{x:Null}" Name="{x:Null}" Password="[vStrCorreoOrigenPass]" Port="[vIntPuertoCorreo]" ReplyTo="{x:Null}" SecureConnection="Auto" SecurePassword="{x:Null}" Server="[vStrServidorCorreo]" Subject="[in_strAsuntoCorreo]" TimeoutMS="{x:Null}" To="[in_strCorreoDestinatario]" UseOAuth="{x:Null}">
                       <ui:SendMail.Files>
                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                       </ui:SendMail.Files>
@@ -213,10 +213,10 @@
               </If>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502.15384615384613,256.9846153846154" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="513.9692307692308,19.93846153846154" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -224,7 +224,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="496.24615384615385,190.5230769230769" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence sap:VirtualizedContainerService.HintSize="496.24615384615385,318.2769230769231" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -238,6 +238,7 @@
                         <InArgument x:TypeArguments="x:Int32">[vIntContadorErrores + 1]</InArgument>
                       </Assign.Value>
                     </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434.2153846153846,89.35384615384615" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Contador errores: &quot; + vIntContadorErrores.ToString]" />
                   </Sequence>
                 </ActivityAction>
               </Catch>
@@ -245,11 +246,8 @@
           </TryCatch>
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
-      <ui:InterruptibleDoWhile.Condition>
-        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="vIntContadorErrores &lt; 5 or vBoolCorreoEnviado = False" />
-      </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
-    <If Condition="[vBoolCorreoEnviado]" sap:VirtualizedContainerService.HintSize="633.5999999999999,663.1384615384615" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[vBoolCorreoEnviado]" sap:VirtualizedContainerService.HintSize="645.4153846153846,663.1384615384615" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="375.87692307692305,177.23076923076923" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
