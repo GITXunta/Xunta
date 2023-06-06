@@ -125,6 +125,141 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_WANDA_IntroducirInfoEnExpediente.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolGuardadoExitoso&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNIF",
+        "in_strCodigoVerificacion",
+        "in_strCasillaImporte"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_castellano_InformeEjecucion.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDtInformeEjecucion&Sequence_3",
+        "vStrEntityCode&Sequence_3",
+        "vStrEntityName&Sequence_3",
+        "vStrTransactionStatus&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_InformeEjecucionSheetName",
+        "in_TransactionItem",
+        "in_SystemException",
+        "in_BusinessException",
+        "in_InformeEjecucionPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "QueueRetry&Sequence_17",
+        "ScreenshotPath&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BusinessException",
+        "in_TransactionField1",
+        "in_TransactionField2",
+        "in_TransactionID",
+        "in_SystemException",
+        "in_Config",
+        "in_TransactionItem",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "io_ConsecutiveSystemExceptions",
+        "in_QueueMaxRetryNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/RetryCurrentTransaction.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "in_SystemException",
+        "in_QueueRetry",
+        "in_TransactionItem",
+        "in_QueueMaxRetryNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrElement&Sequence_2",
+        "vArrApplications&Sequence_2",
+        "vBoolExists&Sequence_3",
+        "vDateTimeOut&Sequence_5"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_IntCloseAppTimeOut"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_castellano_GenerarCuerpoCorreo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrTextoInicialCompletado&Sequence_1",
+        "vStrTextoFinalCompletado&Sequence_1",
+        "vDateFechaActual&Sequence_1",
+        "vStrColorFooter&Sequence_1",
+        "vStrColorUnsubscribe&Sequence_1",
+        "vStrColorPrincipal&Sequence_1",
+        "vStrUrlLogoAmtega&Sequence_1",
+        "vStrUrlLogoXunta&Sequence_1",
+        "vStrFooterText&Sequence_1",
+        "vStrUnsuscribeText&Sequence_1",
+        "vStrFilaTabla&Sequence_1",
+        "vStrTitulo&Sequence_1",
+        "vDtTablaReporte&Sequence_1",
+        "vStrPlantillaCorreo&Sequence_1",
+        "vStrColorFondo&Sequence_5",
+        "vStrFilaTablaAux&Sequence_12",
+        "vStrTextoInicialParada&Sequence_14",
+        "vStrTextoInicioError&Sequence_15"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_strTipoComunicacion",
+        "out_strCorreo",
+        "in_strExceptionType",
+        "in_strExceptionMessage",
+        "in_strTextoGenericoCorreo"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/TakeScreenshot.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Screenshot&Sequence_1",
+        "ScreenshotFileInfo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Folder",
+        "io_FilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }

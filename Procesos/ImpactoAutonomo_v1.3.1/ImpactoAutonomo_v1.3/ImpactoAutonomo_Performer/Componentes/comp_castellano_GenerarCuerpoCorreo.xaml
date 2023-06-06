@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>985.5999999999999,2772.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>865.6,2772.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>func_GenerarCuerpoCorreo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -265,9 +265,15 @@
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                   <InArgument x:TypeArguments="x:String" x:Key="in_strOrchestratorProcessName" />
-                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueFolder">Pruebas</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">listado_sociedades</InArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtTablaInformacion">[vDtTablaReporte]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueFolder">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueFolder&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
+                  </InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtTablaInformacion">
+                    <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="vDtTablaReporte" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:MultipleAssign DisplayName="Assign: Textos inicio y final de la plantilla" sap:VirtualizedContainerService.HintSize="519.2,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
@@ -364,7 +370,7 @@
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
             </Sequence>
-            <Sequence x:Key="parada" DisplayName="Sequence Correo parada" sap:VirtualizedContainerService.HintSize="496,395.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence x:Key="parada" DisplayName="Sequence Correo parada" sap:VirtualizedContainerService.HintSize="496,397.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="vStrTextoInicialParada" />
               </Sequence.Variables>
@@ -413,7 +419,7 @@
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
             </Sequence>
-            <Sequence x:Key="incidencia" DisplayName="Sequence Correo incidencia" sap:VirtualizedContainerService.HintSize="496,425.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence x:Key="incidencia" DisplayName="Sequence Correo incidencia" sap:VirtualizedContainerService.HintSize="496,428" sap2010:WorkflowViewState.IdRef="Sequence_15">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="vStrTextoInicioError" />
               </Sequence.Variables>
@@ -469,7 +475,7 @@
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
             </Sequence>
-            <Sequence x:Key="generico" DisplayName="Sequence Correo genérico" sap:VirtualizedContainerService.HintSize="496,363.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence x:Key="generico" DisplayName="Sequence Correo genérico" sap:VirtualizedContainerService.HintSize="496,365.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
