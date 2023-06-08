@@ -260,6 +260,54 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_ObtenerDatosModelo200.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolHayPdfCorrecto&Sequence_3",
+        "vStrPDFText&Sequence_3",
+        "vStrModelo200&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNumeroExpediente",
+        "out_strCasilla00255",
+        "out_strCodigoVerificacion",
+        "out_strNIF"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_ObtenerDatosModelo184.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolHayPdfCorrecto&Sequence_3",
+        "vStrPDFText&Sequence_3",
+        "vStrModelo184&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNumeroExpediente",
+        "out_strCodigoVerificacion",
+        "out_strNIF",
+        "out_strCasillaD"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_WANDA_castellano_NavegarAExpediente.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrWandaURL&TryCatch_1",
+        "vBoolExisteExpediente&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNumeroExpediente",
+        "in_strProcedimiento"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }

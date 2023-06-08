@@ -302,22 +302,13 @@
   ],
   "logs": [
     {
-      "code": "NU1100",
+      "code": "NU1101",
       "level": "Error",
       "filePath": "C:\\Users\\QJ775JJ\\OneDrive - EY\\Documents\\AMTEGA\\GitHub\\Xunta\\Procesos\\ImpactoAutonomo_v1.3.1\\ImpactoAutonomo_v1.3\\ImpactoAutonomo_Dispacher\\.local",
-      "message": "Unable to resolve 'EY.Kibana.Activities (= 0.1.0.425153529)' for 'net6.0-windows7.0'.",
+      "message": "Unable to find package EY.Kibana.Activities. No packages exist with this id in source(s): C:\\Users\\QJ775JJ\\AppData\\Local\\Programs\\UiPath\\Studio\\Packages, https://api.nuget.org/v3/index.json, https://gallery.uipath.com/api/v3/index.json, https://pkgs.dev.azure.com/uipath/Public.Feeds/_packaging/UiPath-Official/nuget/v3/index.json, https://pkgs.dev.azure.com/uipath/Public.Feeds/_packaging/UiPath-Official/nuget/v3/index.json",
       "libraryId": "EY.Kibana.Activities",
       "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1100",
-      "level": "Error",
-      "filePath": "C:\\Users\\QJ775JJ\\OneDrive - EY\\Documents\\AMTEGA\\GitHub\\Xunta\\Procesos\\ImpactoAutonomo_v1.3.1\\ImpactoAutonomo_v1.3\\ImpactoAutonomo_Dispacher\\.local",
-      "message": "Unable to resolve 'EY.Kibana.Activities (= 0.1.0.425153529)' for 'net6.0-windows7.0/win10-x64'.",
-      "libraryId": "EY.Kibana.Activities",
-      "targetGraphs": [
+        "net6.0-windows7.0",
         "net6.0-windows7.0/win10-x64"
       ]
     }
