@@ -3,7 +3,9 @@
     {
       "Path": null,
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&"
+      ],
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -33,6 +35,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "TransactionItem&StateMachine_1",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
@@ -217,9 +220,9 @@
       "Path": "Componentes/comp_castellano_GenerarCuerpoCorreo.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vStrTextoInicialCompletado&Sequence_1",
         "vStrTextoFinalCompletado&Sequence_1",
-        "vDateFechaActual&Sequence_1",
         "vStrColorFooter&Sequence_1",
         "vStrColorUnsubscribe&Sequence_1",
         "vStrColorPrincipal&Sequence_1",
@@ -321,6 +324,48 @@
         "in_ConfigFile",
         "in_ConfigSheets",
         "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "COMPONENTES/comp_castellano_GenerarReporteOrquestador.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
+        "vStrCondition&Sequence_3",
+        "vIeOrchestratorJobs&Sequence_3",
+        "vDateFilteredStartTime&Sequence_3",
+        "vStrInfoTabla&Sequence_3",
+        "vStrContenido&Sequence_3",
+        "vDtBE&Sequence_3",
+        "vDtSE&Sequence_3",
+        "vDtSuccess&Sequence_3",
+        "vDtNew&Sequence_3",
+        "vIntTotalTransacciones&Sequence_3",
+        "vBoolHasMoreItems&Sequence_3",
+        "vIntSkipCount&Sequence_3",
+        "vIntPageSize&Sequence_3",
+        "vIeQueueItems&Sequence_3",
+        "vIntTransaccionesBE&Sequence_3",
+        "vIntTransaccionesSE&Sequence_3",
+        "vIeQueueFailed&Sequence_3",
+        "vIntTransaccionesSuccess&Sequence_3",
+        "vIeQueueSuccess&Sequence_3",
+        "vIntTransaccionesNew&Sequence_3",
+        "vIeQueueNew&Sequence_89",
+        "vDtResultadoTotal&Sequence_70",
+        "vStrRatioTotalTransacciones&Sequence_70",
+        "vStrRatioExitosos&Sequence_70",
+        "vStrRatioBusinessEx&Sequence_70",
+        "vStrRatioSystemEx&Sequence_70",
+        "vStrRatioPendientes&Sequence_70"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strOrchestratorProcessName",
+        "in_QueueFolder",
+        "in_QueueName",
+        "out_dtTablaInformacion"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

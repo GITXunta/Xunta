@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>865.6,2772.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1220,2740.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>func_GenerarCuerpoCorreo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,11 +105,10 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="func_GenerarCuerpoCorreo" sap:VirtualizedContainerService.HintSize="783.2,2708" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="func_GenerarCuerpoCorreo" sap:VirtualizedContainerService.HintSize="783.2,2676" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="vStrTextoInicialCompletado" />
       <Variable x:TypeArguments="x:String" Name="vStrTextoFinalCompletado" />
-      <Variable x:TypeArguments="s:DateTime" Name="vDateFechaActual" />
       <Variable x:TypeArguments="x:String" Name="vStrColorFooter" />
       <Variable x:TypeArguments="x:String" Name="vStrColorUnsubscribe" />
       <Variable x:TypeArguments="x:String" Name="vStrColorPrincipal" />
@@ -128,9 +127,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="720.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - func_GenerarCuerpoCorreo&quot;]" />
-    <TryCatch DisplayName="Try Catch Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="720.8,2330.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="720.8,2298.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="684,2099.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="684,2067.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="vStrColorFondo" />
           </Sequence.Variables>
@@ -140,7 +139,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Assign: Variables de la plantilla" sap:VirtualizedContainerService.HintSize="621.6,413.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+          <ui:MultipleAssign DisplayName="Assign: Variables de la plantilla" sap:VirtualizedContainerService.HintSize="621.6,381.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -212,14 +211,6 @@
                     <InArgument x:TypeArguments="x:String" xml:space="preserve"> Este email ha sido enviado de forma automática tal y como se solicito en los requerimientos de automatización del proceso. Si no desea seguir recibiendo estos emails, por favor póngase en contacto con el administrador RPA.</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="s:DateTime">[vDateFechaActual]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="s:DateTime">[System.DateTime.Now]</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
                   <ui:AssignOperation.To>
                     <OutArgument x:TypeArguments="x:String">[vStrColorFooter]</OutArgument>
@@ -265,15 +256,9 @@
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                   <InArgument x:TypeArguments="x:String" x:Key="in_strOrchestratorProcessName" />
-                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueFolder">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueFolder&quot;).ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtTablaInformacion">
-                    <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="vDtTablaReporte" />
-                  </OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtTablaInformacion">[vDtTablaReporte]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:MultipleAssign DisplayName="Assign: Textos inicio y final de la plantilla" sap:VirtualizedContainerService.HintSize="519.2,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
@@ -284,7 +269,7 @@
                         <OutArgument x:TypeArguments="x:String">[vStrTextoInicialCompletado]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["Se ha completado correctamente la ejecución del proceso automatizado &lt;b&gt;'"+in_Config("NombreProceso").ToString+"'&lt;/b&gt; ("+in_Config("IdentificadorProceso").ToString+") del día &lt;b&gt;"  + vDateFechaActual.ToString("dd 'de' MMMM 'de' yyyy", New System.Globalization.CultureInfo("es-ES")) +  "&lt;/b&gt; a las &lt;b&gt;"  + vDateFechaActual.ToString("HH:mm:ss") + "&lt;/b&gt;."]</InArgument>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["Se ha completado correctamente la ejecución del proceso automatizado &lt;b&gt;'"+in_Config("NombreProceso").ToString+"'&lt;/b&gt; ("+in_Config("IdentificadorProceso").ToString+") del día &lt;b&gt;"  + vDateProcessStartTime.ToString("dd 'de' MMMM 'de' yyyy", New System.Globalization.CultureInfo("es-ES")) +  "&lt;/b&gt; a las &lt;b&gt;"  + vDateProcessStartTime.ToString("HH:mm:ss") + "&lt;/b&gt;."]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
@@ -370,7 +355,7 @@
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
             </Sequence>
-            <Sequence x:Key="parada" DisplayName="Sequence Correo parada" sap:VirtualizedContainerService.HintSize="496,397.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence x:Key="parada" DisplayName="Sequence Correo parada" sap:VirtualizedContainerService.HintSize="496,395.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="vStrTextoInicialParada" />
               </Sequence.Variables>
@@ -419,7 +404,7 @@
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
             </Sequence>
-            <Sequence x:Key="incidencia" DisplayName="Sequence Correo incidencia" sap:VirtualizedContainerService.HintSize="496,428" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence x:Key="incidencia" DisplayName="Sequence Correo incidencia" sap:VirtualizedContainerService.HintSize="496,425.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="vStrTextoInicioError" />
               </Sequence.Variables>
@@ -475,7 +460,7 @@
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
             </Sequence>
-            <Sequence x:Key="generico" DisplayName="Sequence Correo genérico" sap:VirtualizedContainerService.HintSize="496,365.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence x:Key="generico" DisplayName="Sequence Correo genérico" sap:VirtualizedContainerService.HintSize="496,363.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
