@@ -1,0 +1,400 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&"
+      ],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_61",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "TransactionData&StateMachine_1",
+        "vIntRetryInitialize&StateMachine_1",
+        "vBolLimiteReintentos&StateMachine_1",
+        "vBolBusinessRuleException&StateMachine_1",
+        "vBolCredencialesIncorrectas&StateMachine_1",
+        "vBolInitException&StateMachine_1",
+        "vStrFechaActual&StateMachine_1",
+        "vDtQueueElements&StateMachine_1",
+        "vStrComp_LogInSAP&Sequence_17",
+        "vStrRutaScreenShot&State_1",
+        "vBolInformeEjecucionExists&State_1",
+        "vStrScreenshotPath&Sequence_56",
+        "vStrCuerpoCorreo&Sequence_57",
+        "vStrCuerpoCorreo&Sequence_58",
+        "vStrCuerpoCorreo&Sequence_55",
+        "vBoolAdjuntarInformeEjecucion&Sequence_55",
+        "vDtListadoExpedientes&Sequence_38"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Proceso.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBolFolderExists&Sequence_9",
+        "vDtListadoExpedientes&Sequence_9"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_StrFechaActual",
+        "out_DtQueueElements"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_WANDA_castellano_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolElementExistBienvenida&Sequence_4",
+        "vImgErrorScreenshot&Sequence_4",
+        "vStrUsername&Sequence_4",
+        "vBoolCredencialesInvalidas&Sequence_4",
+        "vStrWandaLoginURL&Sequence_4",
+        "vSecstrPassword&Sequence_4",
+        "vStrCorreo&Sequence_8",
+        "vStrScreenshotPath&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strWandaOrchCredFolder",
+        "in_strWandaOrchCredName",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/TakeScreenshot.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Screenshot&Sequence_1",
+        "ScreenshotFileInfo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Folder",
+        "io_FilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_WANDA_DescargaODSExpedientes.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBool0Resultados&Sequence_2",
+        "vStrWandaURL&TryCatch_1",
+        "vBoolODSDescargado&Sequence_2",
+        "vStrNombreODS&Sequence_2",
+        "vBoolFileExist&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strCarpetaDescargas",
+        "in_ConfigFile",
+        "in_strProcedimientoWanda"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_FiltradoExpedienteXModelo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrFilePath&Sequence_3",
+        "vDtListadoExpedientesFiltrado&Sequence_3",
+        "vDtListadoExpedientes&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_dtListadoExpedientes",
+        "in_strTipoModelo"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_castellano_LibreOfficeConverter.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrLibreOfficeExePath&Sequence_1",
+        "vStrFilePath&Sequence_1",
+        "vStrToFormat&Sequence_1",
+        "vArrFilePathSplit&Sequence_1",
+        "vStrPathWithoutFileName&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strLibreOfficeExePath",
+        "in_strFilePath",
+        "in_strToFormat",
+        "out_strOutputFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_castellano_EnviarCorreo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolCorreoEnviado&Sequence_1",
+        "vIntContadorErrores&Sequence_1",
+        "vStrServidorCorreo&TryCatch_1",
+        "vIntPuertoCorreo&TryCatch_1",
+        "vStrCorreoOrigenUser&TryCatch_1",
+        "vStrCorreoOrigenPass&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strCorreoDestinatario",
+        "in_strAsuntoCorreo",
+        "in_strCuerpoCorreo",
+        "in_ArrArchivosAdjuntos"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_castellano_GenerarCuerpoCorreo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrTextoInicialParada&Sequence_14",
+        "vStrTextoFinalCompletado&Sequence_1",
+        "vStrTextoInicialCompletado&Sequence_1",
+        "vDateFechaActual&Sequence_1",
+        "vStrColorFooter&Sequence_1",
+        "vStrColorUnsubscribe&Sequence_1",
+        "vStrColorPrincipal&Sequence_1",
+        "vStrUrlLogoAmtega&Sequence_1",
+        "vStrUrlLogoXunta&Sequence_1",
+        "vStrFooterText&Sequence_1",
+        "vStrUnsuscribeText&Sequence_1",
+        "vStrFilaTabla&Sequence_1",
+        "vStrTitulo&Sequence_1",
+        "vDtTablaReporte&Sequence_1",
+        "vStrPlantillaCorreo&Sequence_1",
+        "vStrColorFondo&Sequence_5",
+        "vStrFilaTablaAux&Sequence_12",
+        "vStrTextoInicioError&Sequence_15"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_strTipoComunicacion",
+        "out_strCorreo",
+        "in_strExceptionType",
+        "in_strExceptionMessage",
+        "in_strTextoGenericoCorreo"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "COMPONENTES/comp_castellano_GenerarReporteOrquestador.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrCondition&Sequence_3",
+        "vIeOrchestratorJobs&Sequence_3",
+        "vDateFilteredStartTime&Sequence_3",
+        "vStrInfoTabla&Sequence_3",
+        "vStrContenido&Sequence_3",
+        "vDtBE&Sequence_3",
+        "vDtSE&Sequence_3",
+        "vDtSuccess&Sequence_3",
+        "vDtNew&Sequence_3",
+        "vIntTotalTransacciones&Sequence_3",
+        "vBoolHasMoreItems&Sequence_3",
+        "vIntSkipCount&Sequence_3",
+        "vIntPageSize&Sequence_3",
+        "vIeQueueItems&Sequence_3",
+        "vIntTransaccionesBE&Sequence_3",
+        "vIntTransaccionesSE&Sequence_3",
+        "vIeQueueFailed&Sequence_3",
+        "vIntTransaccionesSuccess&Sequence_3",
+        "vIeQueueSuccess&Sequence_3",
+        "vIntTransaccionesNew&Sequence_3",
+        "vIeQueueNew&Sequence_89",
+        "vDtResultadoTotal&Sequence_70",
+        "vStrRatioTotalTransacciones&Sequence_70",
+        "vStrRatioExitosos&Sequence_70",
+        "vStrRatioBusinessEx&Sequence_70",
+        "vStrRatioSystemEx&Sequence_70",
+        "vStrRatioPendientes&Sequence_70"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strOrchestratorProcessName",
+        "in_QueueFolder",
+        "in_QueueName",
+        "out_dtTablaInformacion"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_castellano_InformeEjecucion.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDtInformeEjecucion&Sequence_3",
+        "vStrEntityCode&Sequence_3",
+        "vStrEntityName&Sequence_3",
+        "vStrTransactionStatus&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_InformeEjecucionSheetName",
+        "in_TransactionItem",
+        "in_SystemException",
+        "in_BusinessException",
+        "in_InformeEjecucionPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_CleanQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vQueueTransactionItem&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrQueueName",
+        "in_StrQueueFolder",
+        "in_IntMaxQueueItems"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_WANDA_castellano_LogOut.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolBotonAcceso&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_WANDA_castellano_NavegarAExpediente.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrWandaURL&TryCatch_1",
+        "vBoolExisteExpediente&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNumeroExpediente",
+        "in_strProcedimiento"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_ObtenerDatosModelo184.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolHayPdfCorrecto&Sequence_3",
+        "vStrPDFText&Sequence_3",
+        "vStrModelo184&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNumeroExpediente",
+        "out_strCodigoVerificacion",
+        "out_strNIF",
+        "out_strCasillaD"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_ObtenerDatosModelo200.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolHayPdfCorrecto&Sequence_3",
+        "vStrPDFText&Sequence_3",
+        "vStrModelo200&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNumeroExpediente",
+        "out_strCasilla00255",
+        "out_strCodigoVerificacion",
+        "out_strNIF"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_WANDA_DescargarCarpetaExpediente.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrWandaURL&TryCatch_1",
+        "vBoolFileExist&Sequence_2",
+        "vBoolExisteExpediente&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strProcedimiento",
+        "in_strNumeroExpediente",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_WANDA_IntroducirInfoEnExpediente.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBoolGuardadoExitoso&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strNIF",
+        "in_strCodigoVerificacion",
+        "in_strCasillaImporte"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrElement&Sequence_2",
+        "vArrApplications&Sequence_2",
+        "vBoolExists&Sequence_3",
+        "vDateTimeOut&Sequence_5"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_IntCloseAppTimeOut"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "SettingsAndConstants&Sequence_5",
+        "Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
