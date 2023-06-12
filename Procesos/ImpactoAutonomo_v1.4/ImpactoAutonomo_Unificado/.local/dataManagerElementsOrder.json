@@ -37,8 +37,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vDateProcessStartTime&Sequence_47",
-        "vBoolColaCargada&Sequence_47",
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "vBoolInitException&State_5",
         "vDtQueueElements&StateMachine_1",
         "vDtListadoExpedientes&Sequence_46",
@@ -79,8 +79,8 @@
       "Path": "Framework/InitAllApplications.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vBoolColaCargada&Sequence_43",
-        "vDateProcessStartTime&Sequence_43"
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50"
       ],
       "ArgumentsSectionElementsOrder": [
         "out_dtQueueElements",
@@ -229,6 +229,8 @@
       "Path": "Componentes/comp_CloseAllApplications.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "vStrElement&Sequence_2",
         "vArrApplications&Sequence_2",
         "vBoolExists&Sequence_3",
@@ -345,7 +347,8 @@
       "Path": "Framework/InitAllSettings.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vDateProcessStartTime&Sequence_43",
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "dt_SettingsAndConstants&Sequence_5",
         "dt_Assets&Sequence_6",
         "AssetValue&Sequence_11"
@@ -406,6 +409,8 @@
       "Path": "Framework/KillAllProcesses.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "vDateProcessStartTime&Sequence_43"
       ],
       "ArgumentsSectionElementsOrder": [],
@@ -489,6 +494,22 @@
         "vBoolColaCargada&Sequence_43"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_CleanQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
+        "vQueueTransactionItem&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrQueueName",
+        "in_StrQueueFolder",
+        "in_IntMaxQueueItems"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
