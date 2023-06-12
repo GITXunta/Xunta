@@ -14,6 +14,7 @@
       "Path": "Componentes/comp_WANDA_castellano_Login.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vBoolElementExistBienvenida&Sequence_4",
         "vImgErrorScreenshot&Sequence_4",
         "vStrUsername&Sequence_4",
@@ -69,7 +70,9 @@
     {
       "Path": "Framework/InitAllApplications.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43"
+      ],
       "ArgumentsSectionElementsOrder": [
         "in_Config"
       ],
@@ -80,6 +83,7 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vDataTableListadoExpedientes&Sequence_1",
         "vStrCasillaImporte&Sequence_1",
         "vStrCodigoVerificacion&Sequence_1",
@@ -97,6 +101,7 @@
       "Path": "Functions/func_WANDA_DescargarCarpetaExpediente.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vStrWandaURL&TryCatch_1",
         "vBoolFileExist&Sequence_2",
         "vBoolExisteExpediente&Sequence_2"
@@ -133,6 +138,7 @@
       "Path": "Functions/func_WANDA_IntroducirInfoEnExpediente.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vBoolGuardadoExitoso&Sequence_4"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -147,6 +153,7 @@
       "Path": "Componentes/comp_castellano_InformeEjecucion.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vDtInformeEjecucion&Sequence_3",
         "vStrEntityCode&Sequence_3",
         "vStrEntityName&Sequence_3",
@@ -166,6 +173,7 @@
       "Path": "Framework/SetTransactionStatus.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "QueueRetry&Sequence_17",
         "ScreenshotPath&Sequence_17"
       ],
@@ -188,7 +196,9 @@
     {
       "Path": "Framework/RetryCurrentTransaction.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43"
+      ],
       "ArgumentsSectionElementsOrder": [
         "in_Config",
         "io_RetryNumber",
@@ -254,6 +264,7 @@
       "Path": "Framework/TakeScreenshot.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "Screenshot&Sequence_1",
         "ScreenshotFileInfo&Sequence_1"
       ],
@@ -268,6 +279,7 @@
       "Path": "Functions/func_ObtenerDatosModelo200.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vBoolHayPdfCorrecto&Sequence_3",
         "vStrPDFText&Sequence_3",
         "vStrModelo200&Sequence_3"
@@ -285,6 +297,7 @@
       "Path": "Functions/func_ObtenerDatosModelo184.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vBoolHayPdfCorrecto&Sequence_3",
         "vStrPDFText&Sequence_3",
         "vStrModelo184&Sequence_3"
@@ -302,6 +315,7 @@
       "Path": "Componentes/comp_WANDA_castellano_NavegarAExpediente.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "vStrWandaURL&TryCatch_1",
         "vBoolExisteExpediente&Sequence_3"
       ],
@@ -316,6 +330,7 @@
       "Path": "Framework/InitAllSettings.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
         "dt_SettingsAndConstants&Sequence_5",
         "dt_Assets&Sequence_6",
         "AssetValue&Sequence_11"
@@ -366,6 +381,52 @@
         "in_QueueFolder",
         "in_QueueName",
         "out_dtTablaInformacion"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_castellano_GetQueueMaxRetryNumber.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43",
+        "relativeEndpoint&Sequence_1",
+        "response&Sequence_1",
+        "jsonResponse&Sequence_1",
+        "jsonPathTemplate&Sequence_1",
+        "jsonPath&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_QueueName",
+        "out_QueueMaxRetryNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_43"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

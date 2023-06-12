@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1234.4,826.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>836,765.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetQueueMaxRetryNumber_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -99,7 +99,7 @@
         <InArgument x:TypeArguments="x:String">[String.Format(jsonPathTemplate, in_QueueName)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:OrchestratorHttpRequest DisplayName="Orchestrator HTTP Request (Queues - Get All)" FolderPath="Pruebas" sap:VirtualizedContainerService.HintSize="433.6,245.6" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="[relativeEndpoint]" Result="[response]">
+    <ui:OrchestratorHttpRequest DisplayName="Orchestrator HTTP Request (Queues - Get All)" FolderPath="[in_QueueName]" sap:VirtualizedContainerService.HintSize="433.6,245.6" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="[relativeEndpoint]" Result="[response]">
       <ui:OrchestratorHttpRequest.JSONPayload>
         <InArgument x:TypeArguments="x:String" />
       </ui:OrchestratorHttpRequest.JSONPayload>
