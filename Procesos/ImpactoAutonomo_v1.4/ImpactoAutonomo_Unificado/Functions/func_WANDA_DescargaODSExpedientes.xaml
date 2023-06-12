@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>856,5100</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>836,5140</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Func_WandaDescargaCSVExpedientes_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,14 +113,14 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Func_Wanda_DescargaODSExpedientes" sap:VirtualizedContainerService.HintSize="801.6,5035.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Func_Wanda_DescargaODSExpedientes" sap:VirtualizedContainerService.HintSize="801.6,5075.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="739.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - Func_Wanda_DescargaODSExpedientes&quot;]" />
-    <TryCatch DisplayName="Try Catch Descarga ODS" sap:VirtualizedContainerService.HintSize="739.2,4657.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch Descarga ODS" sap:VirtualizedContainerService.HintSize="739.2,4697.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:String" Default="https://ptwanda.stg.xunta.local/ptwanda-web/inicio/crearMenuClasico.action?idSeccion=" Name="vStrWandaURL" />
       </TryCatch.Variables>
@@ -131,7 +131,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Wanda - Inicio" sap:VirtualizedContainerService.HintSize="702.4,4426.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="f28cd119-3b8a-4504-86f1-2452383fdc07" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Wanda - Inicio" sap:VirtualizedContainerService.HintSize="702.4,4466.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="f28cd119-3b8a-4504-86f1-2452383fdc07" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -388,7 +388,7 @@
                                 </Sequence>
                               </If.Then>
                               <If.Else>
-                                <Sequence sap:VirtualizedContainerService.HintSize="299.8153846153846,79.75384615384615" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -405,7 +405,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InterruptibleDoWhile>
-                      <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="Se mueve el ODS de la carpeta de descarga a la carpeta donde se vaya a trabajar." Destination="[&quot;Data\Temp&quot; + in_strProcedimientoWanda + &quot;.ods&quot;]" DisplayName="Move File 'Archivo ODS' a Temp" sap:VirtualizedContainerService.HintSize="529.6,204" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_strCarpetaDescargas + vStrNombreODS]">
+                      <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="Se mueve el ODS de la carpeta de descarga a la carpeta donde se vaya a trabajar." Destination="[&quot;Data\Temp\&quot; + in_strProcedimientoWanda + &quot;.ods&quot;]" DisplayName="Move File 'Archivo ODS' a Temp" sap:VirtualizedContainerService.HintSize="529.6,204" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_strCarpetaDescargas + vStrNombreODS]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

@@ -23446,15 +23446,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PU751WV\\.nuget\\packages\\": {}
+    "C:\\Users\\QJ775JJ\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ImpactoAutonomo_Unificado",
       "projectName": "ImpactoAutonomo_Unificado",
-      "projectPath": "C:\\Users\\PU751WV\\OneDrive - EY\\Desktop\\GitHub Xunta\\Xunta\\Procesos\\ImpactoAutonomo_v1.4\\ImpactoAutonomo_Unificado\\.local",
-      "packagesPath": "C:\\Users\\PU751WV\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PU751WV\\OneDrive - EY\\Desktop\\GitHub Xunta\\Xunta\\Procesos\\ImpactoAutonomo_v1.4\\ImpactoAutonomo_Unificado\\.local"
+      "projectPath": "C:\\Users\\QJ775JJ\\OneDrive - EY\\Documents\\AMTEGA\\GitHub\\Xunta\\Procesos\\ImpactoAutonomo_v1.4\\ImpactoAutonomo_Unificado\\.local",
+      "packagesPath": "C:\\Users\\QJ775JJ\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\QJ775JJ\\OneDrive - EY\\Documents\\AMTEGA\\GitHub\\Xunta\\Procesos\\ImpactoAutonomo_v1.4\\ImpactoAutonomo_Unificado\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -23510,7 +23510,7 @@
             "version": "[1.16.2, 1.16.2]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\PU751WV\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\QJ775JJ\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
