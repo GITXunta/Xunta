@@ -355,9 +355,8 @@
       "Path": "COMPONENTES/comp_castellano_GenerarReporteOrquestador.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vDateProcessStartTime&Sequence_47",
-        "vBoolColaCargada&Sequence_47",
-        "vDateProcessStartTime&Sequence_43",
+        "vDateProcessStartTime&Sequence_102",
+        "vBoolColaCargada&Sequence_102",
         "vStrCondition&Sequence_3",
         "vIeOrchestratorJobs&Sequence_3",
         "vDateFilteredStartTime&Sequence_3",
