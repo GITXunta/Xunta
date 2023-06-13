@@ -15,7 +15,8 @@
       "Path": "Componentes/comp_WANDA_castellano_Login.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vDateProcessStartTime&Sequence_43",
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "vBoolElementExistBienvenida&Sequence_4",
         "vImgErrorScreenshot&Sequence_4",
         "vStrUsername&Sequence_4",
@@ -128,8 +129,8 @@
       "Path": "Componentes/comp_castellano_EnviarCorreo.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vBoolColaCargada&Sequence_43",
-        "vDateProcessStartTime&Sequence_43",
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "vBoolCorreoEnviado&Sequence_1",
         "vIntContadorErrores&Sequence_1",
         "vStrServidorCorreo&TryCatch_1",
@@ -246,8 +247,8 @@
       "Path": "Componentes/comp_castellano_GenerarCuerpoCorreo.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vBoolColaCargada&Sequence_43",
-        "vDateProcessStartTime&Sequence_43",
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "vStrTextoInicialCompletado&Sequence_1",
         "vStrTextoFinalCompletado&Sequence_1",
         "vStrColorFooter&Sequence_1",
@@ -421,7 +422,8 @@
       "Path": "Componentes/comp_castellano_GetQueueMaxRetryNumber.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vDateProcessStartTime&Sequence_43",
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "relativeEndpoint&Sequence_1",
         "response&Sequence_1",
         "jsonResponse&Sequence_1",
@@ -430,6 +432,7 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "in_QueueName",
+        "in_QueueFolder",
         "out_QueueMaxRetryNumber"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -457,7 +460,8 @@
       "Path": "Functions/func_FiltradoExpedienteXModelo.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vDateProcessStartTime&Sequence_43",
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
         "vStrFilePath&Sequence_3",
         "vDtListadoExpedientesFiltrado&Sequence_3",
         "vDtListadoExpedientes&Sequence_3"
@@ -509,6 +513,47 @@
         "in_StrQueueName",
         "in_StrQueueFolder",
         "in_IntMaxQueueItems"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Functions/func_WANDA_DescargaODSExpedientes.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
+        "vStrWandaURL&TryCatch_1",
+        "vBoolODSDescargado&Sequence_2",
+        "vStrNombreODS&Sequence_2",
+        "vBoolFileExist&Sequence_2",
+        "vBool0Resultados&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_strProcedimientoWanda",
+        "in_strCarpetaDescargas"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Componentes/comp_castellano_LibreOfficeConverter.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDateProcessStartTime&Sequence_50",
+        "vBoolColaCargada&Sequence_50",
+        "vStrLibreOfficeExePath&Sequence_1",
+        "vStrFilePath&Sequence_1",
+        "vStrToFormat&Sequence_1",
+        "vArrFilePathSplit&Sequence_1",
+        "vStrPathWithoutFileName&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strLibreOfficeExePath",
+        "in_strFilePath",
+        "in_strToFormat",
+        "out_strOutputFilePath"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
