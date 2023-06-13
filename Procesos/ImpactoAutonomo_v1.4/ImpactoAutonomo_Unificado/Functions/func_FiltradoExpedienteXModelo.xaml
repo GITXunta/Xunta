@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1253.6,629.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>836,1229.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Func_FiltradoExpedienteXModelo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -100,14 +100,14 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Func_FiltradoExpedienteXModelo" sap:VirtualizedContainerService.HintSize="552,948" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Func_FiltradoExpedienteXModelo" sap:VirtualizedContainerService.HintSize="548.8,1164.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="489.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - Func_FiltradoExpedienteXModelo&quot;]" />
-    <TryCatch DisplayName="Try Catch FiltradoExpedienteXModelo" sap:VirtualizedContainerService.HintSize="489.6,570.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="486.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - Func_FiltradoExpedienteXModelo&quot;]" />
+    <TryCatch DisplayName="Try Catch FiltradoExpedienteXModelo" sap:VirtualizedContainerService.HintSize="486.4,787.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence DisplayName="Filtrar expediente por tipo modelo" sap:VirtualizedContainerService.HintSize="449.6,556" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
@@ -122,10 +122,18 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="COMPONENTES\Comp_LibreOfficeConverter.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Componentes\comp_castellano_LibreOfficeConverter.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strLibreOfficeExePath">[in_Config("LibreOfficeSofficePath").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strFilePath" />
-              <InArgument x:TypeArguments="x:String" x:Key="in_strToFormat">xlsx</InArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_strOutputFilePath">[vStrFilePath]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strLibreOfficeExePath">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;LibreOfficeSofficePath&quot;).ToString" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strFilePath">
+                <Literal x:TypeArguments="x:String">Data\Temp\</Literal>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strToFormat">
+                <Literal x:TypeArguments="x:String">xlsx</Literal>
+              </InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_strOutputFilePath">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="vStrFilePath" />
+              </OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[vDtListadoExpedientes]" DisplayName="Read Range Workbook 'listado expedientes'" sap:VirtualizedContainerService.HintSize="387.2,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Hoja1" WorkbookPath="[vStrFilePath]" />
@@ -151,10 +159,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,405.6" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="452.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -162,19 +170,19 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="449.6,335.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap:VirtualizedContainerService.HintSize="449.6,291.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message No se pudo filtrar el ODS de los expedientes" sap:VirtualizedContainerService.HintSize="333.6,92.80000000000001" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Error: No se pudo realizar el filtrado de expedientes del ODS por tipo de modelo&quot;]" />
+              <ui:LogMessage DisplayName="Log Message No se pudo filtrar el ODS de los expedientes" sap:VirtualizedContainerService.HintSize="387.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Error: No se pudo realizar el filtrado de expedientes del ODS por tipo de modelo&quot;]" />
               <Throw DisplayName="Throw No se pudo filtrar el ODS de los expedientes" Exception="[new SystemException(&quot;No se pudo realizar el filtrado de expedientes del ODS por tipo de modelo&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message 'Final'" sap:VirtualizedContainerService.HintSize="489.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - Func_FiltradoExpedienteXModelo&quot;]" />
+    <ui:LogMessage DisplayName="Log Message 'Final'" sap:VirtualizedContainerService.HintSize="486.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - Func_FiltradoExpedienteXModelo&quot;]" />
   </Sequence>
 </Activity>
