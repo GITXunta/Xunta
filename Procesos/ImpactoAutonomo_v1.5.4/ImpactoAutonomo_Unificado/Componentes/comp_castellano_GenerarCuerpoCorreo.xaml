@@ -1,0 +1,530 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="func_GenerarCuerpoCorreo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_strTipoComunicacion" Type="InArgument(x:String)" />
+    <x:Property Name="out_strCorreo" Type="OutArgument(x:String)" />
+    <x:Property Name="in_strExceptionType" Type="InArgument(x:String)" />
+    <x:Property Name="in_strExceptionMessage" Type="InArgument(x:String)" />
+    <x:Property Name="in_strTextoGenericoCorreo" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:func_GenerarCuerpoCorreo.in_strExceptionType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:func_GenerarCuerpoCorreo.in_strExceptionType>
+  <this:func_GenerarCuerpoCorreo.in_strExceptionMessage>
+    <InArgument x:TypeArguments="x:String" />
+  </this:func_GenerarCuerpoCorreo.in_strExceptionMessage>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1145.6,2738.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>func_GenerarCuerpoCorreo_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="func_GenerarCuerpoCorreo" sap:VirtualizedContainerService.HintSize="783.2,2673.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="vStrTextoInicialCompletado" />
+      <Variable x:TypeArguments="x:String" Name="vStrTextoFinalCompletado" />
+      <Variable x:TypeArguments="x:String" Name="vStrColorFooter" />
+      <Variable x:TypeArguments="x:String" Name="vStrColorUnsubscribe" />
+      <Variable x:TypeArguments="x:String" Name="vStrColorPrincipal" />
+      <Variable x:TypeArguments="x:String" Name="vStrUrlLogoAmtega" />
+      <Variable x:TypeArguments="x:String" Name="vStrUrlLogoXunta" />
+      <Variable x:TypeArguments="x:String" Name="vStrFooterText" />
+      <Variable x:TypeArguments="x:String" Name="vStrUnsuscribeText" />
+      <Variable x:TypeArguments="x:String" Name="vStrFilaTabla" />
+      <Variable x:TypeArguments="x:String" Name="vStrTitulo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="vDtTablaReporte" />
+      <Variable x:TypeArguments="x:String" Name="vStrPlantillaCorreo" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message 'Inicio'" sap:VirtualizedContainerService.HintSize="720.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;START - func_GenerarCuerpoCorreo&quot;]" />
+    <TryCatch DisplayName="Try Catch Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="720.8,2296" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Generar cuerpo correo" sap:VirtualizedContainerService.HintSize="684,2064.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="vStrColorFondo" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Assign: Variables de la plantilla" sap:VirtualizedContainerService.HintSize="621.6,381.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrColorPrincipal]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">#007BC4</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrColorFondo]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">#edeff2</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrUrlLogoAmtega]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">https://i.postimg.cc/6Q7wRr5w/logo-Amtega.png</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrTitulo]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">["&lt;b&gt;"+in_Config("NombreProceso").ToString+"&lt;/b&gt;&lt;br&gt;("+in_Config("IdentificadorProceso").ToString+")"]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrFilaTabla]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve">&lt;tr&gt;
+	&lt;td style='padding: 10px; background-color: #f8f8f8; color: #000000; text-align: left;'&gt;{columna1}&lt;/td&gt;
+	&lt;td style='padding: 10px; background-color: #f8f8f8; color: #000000; text-align: center;'&gt;{columna2}&lt;/td&gt;
+	&lt;td style='padding: 10px; background-color: #f8f8f8; color: #000000; text-align: center;'&gt;{columna3}&lt;/td&gt;
+&lt;/tr&gt;
+{filaTabla}</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrUrlLogoXunta]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">https://i.postimg.cc/MTVS3zQF/logo-Xunta.png</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrFooterText]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">Centro de Innovación Cultural y Modernización Tecnológica de Galicia&lt;br&gt;Cidade da Cultura, Monte Gaiás, s/n&lt;br&gt;Santiago de Compostela</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrUnsuscribeText]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve"> Este email ha sido enviado de forma automática tal y como se solicito en los requerimientos de automatización del proceso. Si no desea seguir recibiendo estos emails, por favor póngase en contacto con el administrador RPA.</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrColorFooter]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">#007BC4</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[vStrColorUnsubscribe]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">#7F869A</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:ReadTextFile File="{x:Null}" Content="[vStrPlantillaCorreo]" DisplayName="Read Text File 'Plantilla correo'" FileName="[in_Config(&quot;PlantillaCorreo&quot;).ToString]" sap:VirtualizedContainerService.HintSize="621.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <Assign DisplayName="Assign: Reemplazar indicadores plantilla por variables" sap:VirtualizedContainerService.HintSize="621.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo.Replace("{colorFondo}",vStrColorFondo).Replace("{colorPrincipal}", vStrColorPrincipal).Replace("{headerLogo}",vStrUrlLogoAmtega).Replace("{Titulo}", vStrTitulo).Replace("{footerLogo}",vStrUrlLogoXunta).Replace("{UnsubscribeText}", vStrUnsuscribeText).Replace("{footerText}", vStrFooterText).Replace("{footerColor}", vStrColorFooter).Replace("{colorUnsubscribe}",vStrColorUnsubscribe)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="En función del tipo de correo que sea se rellenará la plantilla del correo de una forma u otra." DisplayName="Switch Tipo de correo" Expression="[in_strTipoComunicacion.ToLower]" sap:VirtualizedContainerService.HintSize="621.6,1289.6" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence x:Key="completado" DisplayName="Sequence Correo completado" sap:VirtualizedContainerService.HintSize="581.6,1001.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="comp_castellano_GenerarReporteOrquestador.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="519.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Componentes\comp_castellano_GenerarReporteOrquestador.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strOrchestratorProcessName" />
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtTablaInformacion">[vDtTablaReporte]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:MultipleAssign DisplayName="Assign: Textos inicio y final de la plantilla" sap:VirtualizedContainerService.HintSize="519.2,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrTextoInicialCompletado]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["Se ha completado correctamente la ejecución del proceso automatizado &lt;b&gt;'"+in_Config("NombreProceso").ToString+"'&lt;/b&gt; ("+in_Config("IdentificadorProceso").ToString+") del día &lt;b&gt;"  + vDateProcessStartTime.ToString("dd 'de' MMMM 'de' yyyy", New System.Globalization.CultureInfo("es-ES")) +  "&lt;/b&gt; a las &lt;b&gt;"  + vDateProcessStartTime.ToString("HH:mm:ss") + "&lt;/b&gt;."]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrTextoFinalCompletado]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">Se adjunta en este correo el informe de ejecución completado con información de cada elemento procesado.&lt;br&gt;&lt;br&gt;</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[vDtTablaReporte]" DisplayName="For Each Row in Data Table 'Tabla reporte'" sap:VirtualizedContainerService.HintSize="519.2,392" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="485.6,276" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="vStrFilaTablaAux" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MultipleAssign DisplayName="Assign: Meter filas en la tabla de la plantilla" sap:VirtualizedContainerService.HintSize="423.2,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_42">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[vStrFilaTablaAux]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">[vStrFilaTabla]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[vStrFilaTablaAux]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">[vStrFilaTablaAux.Replace("{columna1}",row("Resultado de la ejecucion").ToString).Replace("{columna2}", row("Total elementos").ToString).Replace("{columna3}", row("Ratio").ToString)]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_44">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo.Replace("{filaTabla}", vStrFilaTablaAux)]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                      </ui:MultipleAssign>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+              <ui:MultipleAssign DisplayName="Assign: Quitar indicardor '{filaTabla}' e introducir TextoInicio y TextoFinal" sap:VirtualizedContainerService.HintSize="519.2,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_45">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo.Replace("{filaTabla}", "").Replace("{TextoInicial}", vStrTextoInicialCompletado).Replace("{TextoFinal}", vStrTextoFinalCompletado)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_46">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_strCorreo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+            </Sequence>
+            <Sequence x:Key="parada" DisplayName="Sequence Correo parada" sap:VirtualizedContainerService.HintSize="496,395.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="vStrTextoInicialParada" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Assign Correo parada" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[vStrPlantillaCorreo.Replace("&lt;td align='center' valign='top' bgcolor='#edeff2' style='padding: 10px 10px 40px; font-size: 14px; font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; line-height: 20px; color: #ffffff;'&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='70%' style='border-collapse: collapse; border-radius: 10px; overflow: hidden; text-align: center;'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='100%' style='text-align: center;  font-size: 13px;' class='table-rounded'&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Resultados de la ejecución&lt;/th&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Total de elementos&lt;/th&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Ratio&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;{filaTabla}&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;","").Replace("&lt;br&gt;{TextoFinal}&lt;/br&gt;", "")]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:MultipleAssign DisplayName="Multiple Assign Correo parada" sap:VirtualizedContainerService.HintSize="433.6,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_48">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrTextoInicialParada]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">["Se ha producido un error al iniciarse la ejecución del proceso automatizado &lt;b&gt;'"+in_Config("NombreProceso").ToString+"'&lt;/b&gt; ("+in_Config("IdentificadorProceso").ToString+") que ha hecho que se detenga sin haber empezado a ejecutarse.&lt;br&gt;&lt;br&gt;El Equipo de Soporte de Automatización Inteligente ya ha sido informado.&lt;br&gt;&lt;br&gt;No se requiere ninguna acción por su parte. El Equipo de Soporte de Automatización Inteligente trabajará para que el proceso termine de ejecutarse correctamente y, en caso necesario, se pondrá en contacto con usted."]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_49">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo.Replace("{TextoInicial}", vStrTextoInicialParada)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_50">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_strCorreo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+            </Sequence>
+            <Sequence x:Key="incidencia" DisplayName="Sequence Correo incidencia" sap:VirtualizedContainerService.HintSize="496,425.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="vStrTextoInicioError" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Assign Correo incidencia" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[vStrPlantillaCorreo.Replace("&lt;td align='center' valign='top' bgcolor='#edeff2' style='padding: 10px 10px 40px; font-size: 14px; font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; line-height: 20px; color: #ffffff;'&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='70%' style='border-collapse: collapse; border-radius: 10px; overflow: hidden; text-align: center;'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='100%' style='text-align: center;  font-size: 13px;' class='table-rounded'&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Resultados de la ejecución&lt;/th&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Total de elementos&lt;/th&gt;&lt;th style='padding: 10px; background-color: #007BC4; color: #ffffff; text-align: center;'&gt;Ratio&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;{filaTabla}&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;","").Replace("&lt;br&gt;{TextoFinal}&lt;/br&gt;", "")]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:MultipleAssign DisplayName="Multiple Assign Correo incidencia" sap:VirtualizedContainerService.HintSize="433.6,194.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_51">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrTextoInicioError]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">Se ha producido un error durante la ejecución del proceso automatizado &lt;b&gt;{NombreProceso}&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;bull; &lt;b&gt;Tipo de Error:&lt;/b&gt; {TipoError}.&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;bull; &lt;b&gt;Mensaje:&lt;/b&gt; {MensajeError}.</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrTextoInicioError]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrTextoInicioError.Replace("{NombreProceso}", "&lt;b&gt;'" +in_Config("NombreProceso").ToString + "&lt;/b&gt;' " + in_Config("IdentificadorProceso").ToString).Replace("{TipoError}", in_strExceptionType).Replace("{MensajeError}", in_strExceptionMessage)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_53">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo.Replace("{TextoInicial}", vStrTextoInicioError)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_54">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_strCorreo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+            </Sequence>
+            <Sequence x:Key="generico" DisplayName="Sequence Correo genérico" sap:VirtualizedContainerService.HintSize="496,363.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Assign Correo genérico" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[vStrPlantillaCorreo.Replace("&lt;td align='center' valign='top' bgcolor='"+vStrColorFondo+"' style='padding: 10px 10px 40px; font-size: 14px; font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; line-height: 20px; color: #ffffff;'&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='70%' style='border-collapse: collapse; border-radius: 10px; overflow: hidden; text-align: center;'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;table border='0' cellpadding='0' cellspacing='0' width='100%' style='text-align: center;  font-size: 13px;' class='table-rounded'&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style='padding: 10px; background-color: "+vStrColorPrincipal+"; color: #ffffff; text-align: center;'&gt;Resultados de la ejecución&lt;/th&gt;&lt;th style='padding: 10px; background-color: "+vStrColorPrincipal+"; color: #ffffff; text-align: center;'&gt;Total de elementos&lt;/th&gt;&lt;th style='padding: 10px; background-color: "+vStrColorPrincipal+"; color: #ffffff; text-align: center;'&gt;Ratio&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;{filaTabla}&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;","").Replace("&lt;br&gt;{TextoFinal}&lt;/br&gt;", "")]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:MultipleAssign DisplayName="Multiple Assign Correo genérico" sap:VirtualizedContainerService.HintSize="433.6,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_56">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo.Replace("{TextoInicial}", in_strTextoGenericoCorreo)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_57">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_strCorreo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[vStrPlantillaCorreo]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+            </Sequence>
+          </Switch>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="687.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="449.6,335.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message 'Error'" sap:VirtualizedContainerService.HintSize="387.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[exception.Message]" />
+              <Throw DisplayName="Throw Error al generar el cuerpo del correo" Exception="[New SystemException(&quot;Error al generar el cuerpo del correo electrónico&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message 'Final'" sap:VirtualizedContainerService.HintSize="720.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;END - func_GenerarCuerpoCorreo&quot;]" />
+  </Sequence>
+</Activity>
